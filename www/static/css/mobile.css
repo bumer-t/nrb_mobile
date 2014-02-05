@@ -1,0 +1,88 @@
+/*отступы для хедера*/
+.header_indents {
+    /*margin-bottom: 10px;*/
+    /*margin-top: 10px;*/
+    background: linear-gradient(#236e0e, #54a83b) repeat scroll 0 0 #54a83b;
+    border-color: #5cb85c!important;
+    color: #FFFFFF;
+}
+
+/*размер шрифта в инпуте*/
+.input_size {
+    font-size: 30px!important;
+}
+
+/*фон для хедера*/
+/*.ui-bar-a {*/
+    /*background: linear-gradient(#236e0e, #54a83b) repeat scroll 0 0 #54a83b;*/
+/*}*/
+
+/*убирает отступы между хедером и вкладками*/
+.ui-content {
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    /*padding-bottom: 0px;*/
+}
+
+/*размер шрифта во вклдаках*/
+/*.ui-mini .ui-btn-inner {*/
+    /*font-size: 20.5px;*/
+/*}*/
+
+/*активная вкладка*/
+.ui-btn-active{
+    background: none repeat scroll 0 0 #FAFAFA!important;
+    border-color: #ccd8c6!important;
+    text-shadow: none!important;
+    color: #000000!important;
+    /*border-bottom-color: #1D9400!important;*/
+    /*border-bottom-width: 3px!important;*/
+    box-shadow: 0 0 12px #1D9400!important;
+}
+
+.ui-btn-icon-left:after, .ui-btn-icon-right:after, .ui-btn-icon-top:after, .ui-btn-icon-bottom:after, .ui-btn-icon-notext:after {
+    background-color: #1D9400!important;
+}
+
+/*вкладки хедер*/
+#tabs_head {
+    margin-bottom: 5px;
+}
+
+#main_logo, #space_main_logo_top {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.img_size {
+    width: 100%;
+    max-height: 100%
+}
+
+#space_but_top {
+    margin-top: 38px;
+}
+
+.text_bold_green {
+    color: #1D9400;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.text_bold_black {
+    color: #000000;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.text_grey {
+    color: #878787;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.text_default {
+    font-size: 15px;
+}
+
