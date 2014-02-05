@@ -21,7 +21,7 @@
 .ui-content {
     padding-top: 0px;
     padding-left: 0px;
-    padding-right: 7px;
+    padding-right: 0px;
     /*padding-bottom: 0px;*/
 }
 
@@ -66,13 +66,13 @@
 
 .text_bold_green {
     color: #1D9400;
-    font-size: 25px;
+    font-size: 21px;
     font-weight: bold;
 }
 
 .text_bold_black {
     color: #000000;
-    font-size: 25px;
+    font-size: 21px;
     font-weight: bold;
 }
 
