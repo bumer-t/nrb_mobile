@@ -86,3 +86,7 @@
     font-size: 15px;
 }
 
+#login_code {
+    display: none;
+}
+

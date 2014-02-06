@@ -73,30 +73,43 @@
                     </div>
                     <div class="col-xs-2"></div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-1"></div>
-                    <div class="col-xs-11"><h4>Ваш телефон</h4></div>
+                <div id="login_phone">
+                    <div class="row">
+                        <div class="col-xs-1"></div>
+                        <div class="col-xs-10">
+                            <!--<label for="phone_number"><h4>Ваш телефон</h4></label>
+                            <input class="input_size" id="phone_number" name="phone_number" type="number" maxlength="16"/> -->
+                            <label for="phone_number"><h4>Ваш телефон</h4></label>
+                            <input type="tel" class="input_size" name="phone_number" id="phone_number" value="" maxlength="16">
+                        </div>
+                        <div class="col-xs-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-1"></div>
+                        <div class="col-xs-10">
+                            <label for="password"><h4>Ваш пароль в приват24</h4></label>
+                            <input type="password" class="input_size" name="password" id="password" value="" autocomplete="off">
+                        </div>
+                        <div class="col-xs-1"></div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-1"></div>
-                    <div class="col-xs-10"><input class="input_size" id="phone_number" type="number" maxlength="16"/></div>
-                    <div class="col-xs-1"></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-1"></div>
-                    <div class="col-xs-11"><h4>Ваш пароль в приват24</h4></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-1"></div>
-                    <div class="col-xs-10"><input class="input_size" type="text" maxlength="16"/></div>
-                    <div class="col-xs-1"></div>
+                <div id="login_code">
+                    <div class="row">
+                        <div class="col-xs-1"></div>
+                        <div class="col-xs-11"><h4>Пароль из SMS</h4></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-1"></div>
+                        <div class="col-xs-10"><input class="input_size" id="code" type="number" maxlength="8"/></div>
+                        <div class="col-xs-1"></div>
+                    </div>
                 </div>
                 <div class="row hidden-xs">
                     <div class="col-xs-12" id="space_but_top"></div>
                 </div>
                 <div class="row text-center">
                     <div class="col-xs-4"></div>
-                    <div class="col-xs-4" id="div_but_send_number"><input class="btn btn-success" value="Дальше" type="submit" /></div>
+                    <div class="col-xs-4" id="div_but_send_number"><input class="btn btn-success" id="but_auth" value="Дальше" type="submit" /></div>
                     <div class="col-xs-4"></div>
                 </div>
             </div>

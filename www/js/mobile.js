@@ -37,4 +37,14 @@ $(function(){
         var heightHeader = Math.round($(this).parent().height() / 2);
         $(this).css('padding-top', heightHeader - Math.round($(this).children().height() / 2));
     });
+
+
+
+    $('#but_auth').on('touchstart', function(e){
+        e.stopPropagation(); e.preventDefault();
+        alert('qqq');
+
+    });
+
+
 });
