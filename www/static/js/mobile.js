@@ -37,7 +37,8 @@ function send_otp() {
     }
     //success
     alert('new page soon');
-    $('#div_my_deposits').load('my_deposits.html').trigger("create");
+//    $('#div_my_deposits').load('my_deposits.html').trigger("create");
+    $("#div_my_deposits").load('my_deposits.html', function(){$(this).trigger("create")});
     $('#div_login_forms').hide();
     $('#div_my_deposits').show();
 }
@@ -54,7 +55,7 @@ $(function(){
     $('#phone_number').numeric();
     $('#code').numeric();
 
-    $('.height_center').each(function() {
+    $('.height_center_2').each(function() {
         var heightHeader = Math.round($(this).parent().height() / 2);
         $(this).css('padding-top', heightHeader - Math.round($(this).children().height() / 2));
     });
