@@ -13,18 +13,38 @@ function getPhoneCode() {
             return '995';
         default:
             return '380'
-    };
-};
+    }
+}
+
+function send_phone() {
+    if ($('#phone_number').val().length < 7) {
+        alert('Не введен номер');
+        return false;
+    }
+    if ($('#password').val().length < 1) {
+        alert('Не введен пароль');
+        return false;
+    }
+    //success
+    $('#login_phone').hide();
+    $('#login_code').show();
+}
+
+function send_otp() {
+    if ($('#code').val().length < 1) {
+        alert('Не введен otp-пароль');
+        return false;
+    }
+    //success
+    alert('new page soon');
+    $('#div_my_deposits').load('my_deposits.html').trigger("create");
+    $('#div_login_forms').hide();
+    $('#div_my_deposits').show();
+}
 
 $(function(){
-    //вкладки на главной - % и мои ставки
-//    var prevSelection = "tab1";
-//    $("#navbar ul li").on('click', function() {
-//        var newSelection = $(this).children("a").attr("data-tab-class");
-//        $("."+prevSelection).addClass("ui-screen-hidden");
-//        $("."+newSelection).removeClass("ui-screen-hidden");
-//        prevSelection = newSelection;
-//    });
+
+//    $.mobile.allowCrossDomainPages = true; $.support.cors = true; $.mobile.phonegapNavigationEnabled = true
 
     //для поля-телефон - фиксируем код страны
     var phone_code = getPhoneCode();
@@ -32,19 +52,21 @@ $(function(){
     $('#phone_number').attr("value", phone_code);
     //ввод только цифер
     $('#phone_number').numeric();
+    $('#code').numeric();
 
     $('.height_center').each(function() {
         var heightHeader = Math.round($(this).parent().height() / 2);
         $(this).css('padding-top', heightHeader - Math.round($(this).children().height() / 2));
     });
 
-
-
-    $('#but_auth').on('touchstart', function(e){
+    //клик по клопке - Вход
+    $('#but_auth').on('touchstart click', function(e){
         e.stopPropagation(); e.preventDefault();
-        alert('qqq');
-
+        if ($('#login_phone').is(":visible")) {
+            send_phone();
+        } else {
+            send_otp();
+        }
     });
-
 
 });

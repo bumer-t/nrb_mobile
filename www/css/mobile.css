@@ -86,7 +86,7 @@
     font-size: 15px;
 }
 
-#login_code {
+#login_code, #div_my_deposits {
     display: none;
 }
 
