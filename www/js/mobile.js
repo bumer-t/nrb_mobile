@@ -44,9 +44,6 @@ function send_otp() {
 }
 
 $(function(){
-
-//    $.mobile.allowCrossDomainPages = true; $.support.cors = true; $.mobile.phonegapNavigationEnabled = true
-
     //для поля-телефон - фиксируем код страны
     var phone_code = getPhoneCode();
     $('#phone_number').attr("placeholder", phone_code);
@@ -55,7 +52,7 @@ $(function(){
     $('#phone_number').numeric();
     $('#code').numeric();
 
-    $('.height_center_2').each(function() {
+    $('.height_center').each(function() {
         var heightHeader = Math.round($(this).parent().height() / 2);
         $(this).css('padding-top', heightHeader - Math.round($(this).children().height() / 2));
     });

@@ -1,12 +1,3 @@
-/*отступы для хедера*/
-.header_indents {
-    /*margin-bottom: 10px;*/
-    /*margin-top: 10px;*/
-    background: linear-gradient(#236e0e, #54a83b) repeat scroll 0 0 #54a83b;
-    border-color: #5cb85c!important;
-    color: #FFFFFF;
-}
-
 /*размер шрифта в инпуте*/
 .input_size {
     font-size: 30px!important;
@@ -24,11 +15,6 @@
     padding-right: 0px;
     /*padding-bottom: 0px;*/
 }
-
-/*размер шрифта во вклдаках*/
-/*.ui-mini .ui-btn-inner {*/
-    /*font-size: 20.5px;*/
-/*}*/
 
 /*активная вкладка*/
 .ui-btn-active{
