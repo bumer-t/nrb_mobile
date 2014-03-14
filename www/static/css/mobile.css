@@ -3,16 +3,17 @@
     font-size: 30px!important;
 }
 
-/*фон для хедера*/
-/*.ui-bar-a {*/
-    /*background: linear-gradient(#236e0e, #54a83b) repeat scroll 0 0 #54a83b;*/
-/*}*/
-
+/*отступ на главной справа*/
+#tabs {
+    /*padding-left: 0px;*/
+    /*margin-left: -16px;*/
+    margin-right: -16px;
+}
 /*убирает отступы между хедером и вкладками*/
 .ui-content {
     padding-top: 0px;
     padding-left: 0px;
-    padding-right: 0px;
+    /*padding-right: 0px;*/
     /*padding-bottom: 0px;*/
 }
 
@@ -69,13 +70,13 @@
     font-weight: bold;
 }
 
-.text_grey {
+.t_grey_15 {
     color: #878787;
     font-size: 15px;
     font-weight: bold;
 }
 
-.text_grey2 {
+.t_grey_17 {
     color: #878787;
     font-size: 17px;
     font-weight: bold;
@@ -85,7 +86,7 @@
     font-size: 15px;
 }
 
-#login_code, #div_my_deposits {
+#login_code, #div_my_deposits, #div_deposit_info, .div_create_deposit {
     display: none;
 }
 
@@ -249,4 +250,9 @@
     .col-sm-offset-11 {
         margin-left: 91.66666666666666%;
     }
+}
+
+.table_custom th, .table_custom td {
+    text-align: center!important;
+    vertical-align: middle!important;
 }

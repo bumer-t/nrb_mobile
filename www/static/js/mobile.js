@@ -66,9 +66,31 @@ $(function(){
             send_otp();
         }
     });
+
+    //Показывает форму оформления депозита
+    $(document).on('touchstart click', '.create_deposit', function(e){
+        e.stopPropagation(); e.preventDefault();
+        console.log('create');
+        var temp_currency = $('#head_currency .ui-state-active').contents().attr('href');
+        var currency = temp_currency.substring(1,temp_currency.length);
+        $('#'+currency).find('table').hide();
+        $('#'+currency).find('.div_create_deposit').load('deposit_create.html', function(){$(this).trigger("create")});
+        $('#'+currency).find('.div_create_deposit').show();
+    });
+
+    //клик по Депозиту
+    $('.deposit').on('touchstart click', function(e){
+        e.stopPropagation(); e.preventDefault();
+        var id_deposit = ($(this).attr('id'));
+        var title = $('#' + id_deposit).find('.dep_name').text();
+        $('#title').text(title);
+        $("#div_deposit_info").load('deposit_info.html', function(){$(this).trigger("create")});
+        $('#deposits_list').hide();
+        $('#div_deposit_info').show();
+    });
+
     //set
-    window.localStorage.setItem("key", "value");
+//    window.localStorage.setItem("key", "value");
     //get
-    var value = window.localStorage.getItem("key");
-    alert(value);
+//    var value = window.localStorage.getItem("key");
 });

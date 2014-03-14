@@ -19,7 +19,7 @@
 <body>
 <div data-role="page" data-theme="a">
     <div data-role="header">
-        <h1>Мои вклады</h1>
+        <h1><span id="title">Мои вклады</span></h1>
         <a href="#" data-icon="gear" class="ui-btn-right">Options</a>
     </div><!-- /header -->
 
@@ -32,20 +32,20 @@
                 </ul>
             </div>
             <div id="one" class="ui-body-d ui-content">
-                <ul data-role="listview">
+                <ul data-role="listview" id="deposits_list">
                     <li>
-                        <a href="http://shreerangpatwardhan.blogspot.com">
+                        <a href="#" class="deposit" id="dep_plus">
                             <div class="row">
                                 <div class="col-sm-6 text-center">
                                     <div class="col-sm-12 height_center">
-                                        <p><span class="bold_green17">Депозит Плюс</span></p>
+                                        <p><span class="dep_name bold_green17">Депозит Плюс</span></p>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 text-center">
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-10 text-left height_center">
                                         <p>
-                                            <span class="text_grey2">20%</span> <span class="text_default">гривна</span>
+                                            <span class="t_grey_17">20%</span> <span class="text_default">гривна</span>
                                         </p>
                                     </div>
                                     <div class="col-sm-1"></div>
@@ -54,13 +54,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://shreerangpatwardhan.blogspot.in/p/code-samples.html">
+                        <a href="#" class="deposit" id="stand">
                             <div class="row">
                                 <div class="col-sm-6 text-center">
                                     <div class="col-sm-12 not_visible">1</div>
                                     <div class="col-sm-12 not_visible">2</div>
                                     <div class="col-sm-12">
-                                        <p><span class="bold_green17">Стандарт</span></p>
+                                        <p><span class="dep_name bold_green17">Стандарт</span></p>
                                     </div>
                                     <div class="col-sm-12 not_visible">4</div>
                                     <div class="col-sm-12 not_visible">5</div>
@@ -69,44 +69,16 @@
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-10 text-left">
                                         <p>
-                                            <span class="text_grey2">19%</span> <span class="text_default">гривна</span>
+                                            <span class="t_grey_17">19%</span> <span class="text_default">гривна</span>
                                         </p>
                                         <p>
-                                            <span class="text_grey2">10%</span> <span class="text_default">доллар</span>
+                                            <span class="t_grey_17">10%</span> <span class="text_default">доллар</span>
                                         </p>
                                         <p>
-                                            <span class="text_grey2">8%</span> <span class="text_default">евро</span>
+                                            <span class="t_grey_17">8%</span> <span class="text_default">евро</span>
                                         </p>
                                         <p>
-                                            <span class="text_grey2">9%</span> <span class="text_default">рубли</span>
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-1"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://shreerangpatwardhan.blogspot.in/p/code-samples.html">
-                            <div class="row">
-                                <div class="col-sm-6 text-center">
-                                    <div class="col-sm-12 text_grey2 not_visible">1</div>
-                                    <div class="col-sm-12">
-                                        <p><span class="bold_green17">Приват-вклад</span></p>
-                                    </div>
-                                    <div class="col-sm-12 text_grey2 not_visible">3</div>
-                                </div>
-                                <div class="col-sm-6 text-center">
-                                    <div class="col-sm-1"></div>
-                                    <div class="col-sm-10 text-left">
-                                        <p>
-                                            <span class="text_grey2">8.5%</span> <span class="text_default">гривна</span>
-                                        </p>
-                                        <p>
-                                            <span class="text_grey2">4%</span> <span class="text_default">доллар</span>
-                                        </p>
-                                        <p>
-                                            <span class="text_grey2">3%</span> <span class="text_default">евро</span>
+                                            <span class="t_grey_17">9%</span> <span class="text_default">рубли</span>
                                         </p>
                                     </div>
                                     <div class="col-sm-1"></div>
@@ -115,23 +87,51 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://shreerangpatwardhan.blogspot.in/p/code-samples.html">
+                        <a href="#" class="deposit" id="privat_vklad">
                             <div class="row">
                                 <div class="col-sm-6 text-center">
-                                    <div class="col-sm-12 text_grey2 not_visible">1</div>
+                                    <div class="col-sm-12 t_grey_17 not_visible">1</div>
                                     <div class="col-sm-12">
-                                        <p><span class="bold_green17">Тест</span></p>
+                                        <p><span class="dep_name bold_green17">Приват-вклад</span></p>
                                     </div>
-                                    <div class="col-sm-12 text_grey2 not_visible">3</div>
+                                    <div class="col-sm-12 t_grey_17 not_visible">3</div>
                                 </div>
                                 <div class="col-sm-6 text-center">
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-10 text-left">
                                         <p>
-                                            <span class="text_grey2">8.5%</span> <span class="text_default">гривна</span>
+                                            <span class="t_grey_17">8.5%</span> <span class="text_default">гривна</span>
                                         </p>
                                         <p>
-                                            <span class="text_grey2">4%</span> <span class="text_default">доллар</span>
+                                            <span class="t_grey_17">4%</span> <span class="text_default">доллар</span>
+                                        </p>
+                                        <p>
+                                            <span class="t_grey_17">3%</span> <span class="text_default">евро</span>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="deposit" id="test">
+                            <div class="row">
+                                <div class="col-sm-6 text-center">
+                                    <div class="col-sm-12 t_grey_17 not_visible">1</div>
+                                    <div class="col-sm-12">
+                                        <p><span class="dep_name bold_green17">Тест</span></p>
+                                    </div>
+                                    <div class="col-sm-12 t_grey_17 not_visible">3</div>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-10 text-left">
+                                        <p>
+                                            <span class="t_grey_17">8.5%</span> <span class="text_default">гривна</span>
+                                        </p>
+                                        <p>
+                                            <span class="t_grey_17">4%</span> <span class="text_default">доллар</span>
                                         </p>
                                     </div>
                                     <div class="col-sm-1"></div>
@@ -140,6 +140,7 @@
                         </a>
                     </li>
                 </ul>
+                <div id="div_deposit_info"></div>
             </div>
             <div id="two" class="ui-body-d ui-content">
                 <!--<div class="row hidden-xs">
