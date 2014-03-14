@@ -97,9 +97,9 @@
     opacity : 0;
 }
 
-@media (min-width: 410px) {
+@media (min-width: 350px) {
     .container {
-        max-width: 398px;
+        max-width: 339px;
     }
     .col-sm-1,
     .col-sm-2,

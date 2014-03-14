@@ -43,44 +43,6 @@ function send_otp() {
     $('#div_my_deposits').show();
 }
 
-function setCookie(name, value, options) {
-    options = options || {};
-
-    var expires = options.expires;
-
-    if (typeof expires == "number" && expires) {
-        var d = new Date();
-        d.setTime(d.getTime() + expires*1000);
-        expires = options.expires = d;
-    }
-    if (expires && expires.toUTCString) {
-        options.expires = expires.toUTCString();
-    }
-
-    value = encodeURIComponent(value);
-
-    var updatedCookie = name + "=" + value;
-
-    for(var propName in options) {
-        updatedCookie += "; " + propName;
-        var propValue = options[propName];
-        if (propValue !== true) {
-            updatedCookie += "=" + propValue;
-        }
-    }
-
-    document.cookie = updatedCookie;
-}
-
-// возвращает cookie с именем name, если есть, если нет, то undefined
-function getCookie(name) {
-    var matches = document.cookie.match(new RegExp(
-        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-    ));
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-}
-
-
 $(function(){
     //для поля-телефон - фиксируем код страны
     var phone_code = getPhoneCode();
@@ -104,12 +66,9 @@ $(function(){
             send_otp();
         }
     });
-
-    if (!navigator.cookieEnabled) {
-        alert('Включите cookie для комфортной работы с этим сайтом');
-    }
-
-    setCookie('qwe', 2);
-    alert(getCookie('qwe'));
-
+    //set
+    window.localStorage.setItem("key", "value");
+    //get
+    var value = window.localStorage.getItem("key");
+    alert(value);
 });
