@@ -55,6 +55,7 @@ function send_otp() {
 }
 
 function onLoad() {
+    $.mobile.phonegapNavigationEnabled = true;
     document.addEventListener("deviceready", onDeviceReady, false);
     console.log('qweqweqwe')
 }
@@ -74,6 +75,7 @@ function onBackKeyDown() {
 }
 
 $(function(){
+    $.mobile.phonegapNavigationEnabled = true;
     //для поля-телефон - фиксируем код страны
     var phone_code = getPhoneCode();
     $('#phone_number').attr("placeholder", phone_code);
