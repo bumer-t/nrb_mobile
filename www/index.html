@@ -24,185 +24,167 @@
     </div><!-- /header -->
 
     <div role="main" class="ui-content">
-        <div data-role="tabs" id="tabs">
-            <div data-role="navbar" id="tabs_head">
-                <ul>
-                    <li><a class="ui-btn-active" href="#one" data-ajax="false">% Ставки</a></li>
-                    <li><a href="#two" data-ajax="false">Мои вклады</a></li>
-                </ul>
-            </div>
-            <div id="one" class="ui-body-d ui-content">
-                <ul data-role="listview" id="deposits_list">
-                    <li>
-                        <a href="#" class="deposit" id="dep_plus">
-                            <div class="row">
-                                <div class="col-sm-6 text-center">
-                                    <div class="col-sm-12 height_center">
-                                        <p><span class="dep_name bold_green17">Депозит Плюс</span></p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 text-center">
-                                    <div class="col-sm-1"></div>
-                                    <div class="col-sm-10 text-left height_center">
-                                        <p>
-                                            <span class="t_grey_17">20%</span> <span class="text_default">гривна</span>
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-1"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="deposit" id="stand">
-                            <div class="row">
-                                <div class="col-sm-6 text-center">
-                                    <div class="col-sm-12 not_visible">1</div>
-                                    <div class="col-sm-12 not_visible">2</div>
-                                    <div class="col-sm-12">
-                                        <p><span class="dep_name bold_green17">Стандарт</span></p>
-                                    </div>
-                                    <div class="col-sm-12 not_visible">4</div>
-                                    <div class="col-sm-12 not_visible">5</div>
-                                </div>
-                                <div class="col-sm-6 text-center">
-                                    <div class="col-sm-1"></div>
-                                    <div class="col-sm-10 text-left">
-                                        <p>
-                                            <span class="t_grey_17">19%</span> <span class="text_default">гривна</span>
-                                        </p>
-                                        <p>
-                                            <span class="t_grey_17">10%</span> <span class="text_default">доллар</span>
-                                        </p>
-                                        <p>
-                                            <span class="t_grey_17">8%</span> <span class="text_default">евро</span>
-                                        </p>
-                                        <p>
-                                            <span class="t_grey_17">9%</span> <span class="text_default">рубли</span>
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-1"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="deposit" id="privat_vklad">
-                            <div class="row">
-                                <div class="col-sm-6 text-center">
-                                    <div class="col-sm-12 t_grey_17 not_visible">1</div>
-                                    <div class="col-sm-12">
-                                        <p><span class="dep_name bold_green17">Приват-вклад</span></p>
-                                    </div>
-                                    <div class="col-sm-12 t_grey_17 not_visible">3</div>
-                                </div>
-                                <div class="col-sm-6 text-center">
-                                    <div class="col-sm-1"></div>
-                                    <div class="col-sm-10 text-left">
-                                        <p>
-                                            <span class="t_grey_17">8.5%</span> <span class="text_default">гривна</span>
-                                        </p>
-                                        <p>
-                                            <span class="t_grey_17">4%</span> <span class="text_default">доллар</span>
-                                        </p>
-                                        <p>
-                                            <span class="t_grey_17">3%</span> <span class="text_default">евро</span>
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-1"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="deposit" id="test">
-                            <div class="row">
-                                <div class="col-sm-6 text-center">
-                                    <div class="col-sm-12 t_grey_17 not_visible">1</div>
-                                    <div class="col-sm-12">
-                                        <p><span class="dep_name bold_green17">Тест</span></p>
-                                    </div>
-                                    <div class="col-sm-12 t_grey_17 not_visible">3</div>
-                                </div>
-                                <div class="col-sm-6 text-center">
-                                    <div class="col-sm-1"></div>
-                                    <div class="col-sm-10 text-left">
-                                        <p>
-                                            <span class="t_grey_17">8.5%</span> <span class="text_default">гривна</span>
-                                        </p>
-                                        <p>
-                                            <span class="t_grey_17">4%</span> <span class="text_default">доллар</span>
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-1"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <div id="div_deposit_info"></div>
-            </div>
-            <div id="two" class="ui-body-d ui-content">
-                <!--<div class="row hidden-xs">
-                    <div class="col-sm-12" id="space_main_logo_top"></div>
-                </div>-->
-                <div id="div_login_forms">
-                    <div class="row" id="main_logo1">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm-8 text-center">
-                            <img class="img_size" src="static/images/main.png"/>
-                        </div>
-                        <div class="col-sm-2"></div>
-                    </div>
-                    <div id="login_phone">
-                        <div class="row">
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-10">
-                                <label for="phone_number"><h4>Ваш телефон</h4></label>
-                                <input type="tel" class="input_size" name="phone_number" id="phone_number" value="380937547086" maxlength="16">
-                            </div>
-                            <div class="col-sm-1"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-10">
-                                <label for="password"><h4>Ваш пароль в приват24</h4></label>
-                                <input type="password" class="input_size" name="password" id="password" value="1234" autocomplete="off">
-                            </div>
-                            <div class="col-sm-1"></div>
-                        </div>
-                    </div>
-                    <div id="login_code">
-                        <div class="row">
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-10">
-                                <label for="code"><h4>Пароль из SMS</h4></label>
-                                <input class="input_size" id="code" type="tel" value="1234" maxlength="8"/>
-                            </div>
-                            <div class="col-sm-1"></div>
-                        </div>
-                    </div>
-                    <div class="row hidden-xs">
-                        <div class="col-sm-12" id="space_but_top"></div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4" id="div_but_send_number"><input class="btn btn-success" id="but_auth" value="Дальше" type="submit" /></div>
-                        <div class="col-sm-4"></div>
-                    </div>
+        <div id="div_main">
+            <div data-role="tabs" id="tabs">
+                <div data-role="navbar" id="tabs_head">
+                    <ul>
+                        <li><a class="ui-btn-active" href="#one" data-ajax="false">% Ставки</a></li>
+                        <li><a href="#two" data-ajax="false">Мои вклады</a></li>
+                    </ul>
                 </div>
-                <div id="div_my_deposits"></div>
-            </div>
-        </div>
-    </div><!-- /content -->
-
-    <!--<div data-role="footer">
-        <h4>Page Footer</h4>
-    </div> /footer -->
-</div><!-- /page -->
-
-</body>
-</html>ss="col-sm-12" id="space_but_top"></div>
+                <div id="one" class="ui-body-d ui-content">
+                    <ul data-role="listview" id="deposits_list">
+                        <li>
+                            <a href="#" class="deposit" id="dep_plus">
+                                <div class="row">
+                                    <div class="col-sm-6 text-center">
+                                        <div class="col-sm-12 height_center">
+                                            <p><span class="dep_name bold_green17">Депозит Плюс</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-10 text-left height_center">
+                                            <p>
+                                                <span class="t_grey_17">20%</span> <span class="text_default">гривна</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-1"></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="deposit" id="stand">
+                                <div class="row">
+                                    <div class="col-sm-6 text-center">
+                                        <div class="col-sm-12 not_visible">1</div>
+                                        <div class="col-sm-12 not_visible">2</div>
+                                        <div class="col-sm-12">
+                                            <p><span class="dep_name bold_green17">Стандарт</span></p>
+                                        </div>
+                                        <div class="col-sm-12 not_visible">4</div>
+                                        <div class="col-sm-12 not_visible">5</div>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-10 text-left">
+                                            <p>
+                                                <span class="t_grey_17">19%</span> <span class="text_default">гривна</span>
+                                            </p>
+                                            <p>
+                                                <span class="t_grey_17">10%</span> <span class="text_default">доллар</span>
+                                            </p>
+                                            <p>
+                                                <span class="t_grey_17">8%</span> <span class="text_default">евро</span>
+                                            </p>
+                                            <p>
+                                                <span class="t_grey_17">9%</span> <span class="text_default">рубли</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-1"></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="deposit" id="privat_vklad">
+                                <div class="row">
+                                    <div class="col-sm-6 text-center">
+                                        <div class="col-sm-12 t_grey_17 not_visible">1</div>
+                                        <div class="col-sm-12">
+                                            <p><span class="dep_name bold_green17">Приват-вклад</span></p>
+                                        </div>
+                                        <div class="col-sm-12 t_grey_17 not_visible">3</div>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-10 text-left">
+                                            <p>
+                                                <span class="t_grey_17">8.5%</span> <span class="text_default">гривна</span>
+                                            </p>
+                                            <p>
+                                                <span class="t_grey_17">4%</span> <span class="text_default">доллар</span>
+                                            </p>
+                                            <p>
+                                                <span class="t_grey_17">3%</span> <span class="text_default">евро</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-1"></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="deposit" id="test">
+                                <div class="row">
+                                    <div class="col-sm-6 text-center">
+                                        <div class="col-sm-12 t_grey_17 not_visible">1</div>
+                                        <div class="col-sm-12">
+                                            <p><span class="dep_name bold_green17">Тест</span></p>
+                                        </div>
+                                        <div class="col-sm-12 t_grey_17 not_visible">3</div>
+                                    </div>
+                                    <div class="col-sm-6 text-center">
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-10 text-left">
+                                            <p>
+                                                <span class="t_grey_17">8.5%</span> <span class="text_default">гривна</span>
+                                            </p>
+                                            <p>
+                                                <span class="t_grey_17">4%</span> <span class="text_default">доллар</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-1"></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="div_deposit_info"></div>
+                </div>
+                <div id="two" class="ui-body-d ui-content">
+                    <!--<div class="row hidden-xs">
+                        <div class="col-sm-12" id="space_main_logo_top"></div>
+                    </div>-->
+                    <div id="div_login_forms">
+                        <div class="row" id="main_logo1">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8 text-center">
+                                <img class="img_size" src="static/images/main.png"/>
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div id="login_phone">
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-10">
+                                    <label for="phone_number"><h4>Ваш телефон</h4></label>
+                                    <input type="tel" class="input_size" name="phone_number" id="phone_number" value="380937547086" maxlength="16">
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-10">
+                                    <label for="password"><h4>Ваш пароль в приват24</h4></label>
+                                    <input type="password" class="input_size" name="password" id="password" value="1234" autocomplete="off">
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                        </div>
+                        <div id="login_code">
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-10">
+                                    <label for="code"><h4>Пароль из SMS</h4></label>
+                                    <input class="input_size" id="code" type="tel" value="1234" maxlength="8"/>
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                        </div>
+                        <div class="row hidden-xs">
+                            <div class="col-sm-12" id="space_but_top"></div>
                         </div>
                         <div class="row text-center">
                             <div class="col-sm-4"></div>
