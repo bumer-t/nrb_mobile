@@ -115,4 +115,13 @@ $(function(){
 //    window.localStorage.setItem("key", "value");
     //get
 //    var value = window.localStorage.getItem("key");
+    change_hash_url('homepage');
+
+    document.addEventListener("backbutton", onBackKeyDown, false);
+
+    function onBackKeyDown() {
+        alert(location.hash);
+    }
+
+
 });
