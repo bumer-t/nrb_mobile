@@ -159,6 +159,7 @@ $(function(){
 
     function exitApp() {
         console.log("Exiting app");
+        alert('Exiting app');
         navigator.app.exitApp();
     }
 
@@ -177,6 +178,7 @@ $(function(){
         } else {
             goingBack = true;
             console.log("Going back to page #"+pageHistoryCount);
+            alert("Going back to page #"+pageHistoryCount);
             window.history.back();
         }
     }
