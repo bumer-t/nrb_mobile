@@ -53,6 +53,23 @@ function send_otp() {
     $('#div_my_deposits').show();
 }
 
+function onLoad() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+// Cordova is loaded and it is now safe to call Cordova methods
+//
+function onDeviceReady() {
+    // Register the event listener
+    document.addEventListener("backbutton", onBackKeyDown, false);
+}
+
+// Handle the back button
+//
+function onBackKeyDown() {
+    alert(location.hash);
+}
+
 $(function(){
     //для поля-телефон - фиксируем код страны
     var phone_code = getPhoneCode();
