@@ -52,6 +52,14 @@
     margin-top: 38px;
 }
 
+#result {
+    margin-left: 16px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 .text_bold_green {
     color: #1D9400;
     font-size: 21px;
@@ -64,14 +72,26 @@
     font-weight: bold;
 }
 
-.text_bold_black {
+.t_black_21 {
     color: #000000;
     font-size: 21px;
     font-weight: bold;
 }
 
+.t_black_15 {
+    color: #000000;
+    font-size: 15px;
+    font-weight: bold;
+}
+
 .t_grey_15 {
     color: #878787;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.t_grey2_15 {
+    color: #4d4d4d;
     font-size: 15px;
     font-weight: bold;
 }
@@ -86,7 +106,7 @@
     font-size: 15px;
 }
 
-#login_code, #div_my_deposits, #div_deposit_info, .div_create_deposit {
+#login_code, #div_my_deposits, #div_deposit_info, .div_create_deposit, #result {
     display: none;
 }
 
@@ -96,6 +116,10 @@
 
 .not_visible {
     opacity : 0;
+}
+
+.background_grey {
+    background: #e3e3e3;
 }
 
 @media (min-width: 350px) {
