@@ -24,6 +24,7 @@ function change_hash_url(hash_url) {
 function include_html(celector, template_name) {
     celector.load(template_name+'.html', function(){$(this).trigger("create")});
     change_hash_url(template_name);
+    document.addEventListener("backbutton", onBackKeyDown, false);
 }
 
 function send_phone() {
@@ -55,6 +56,7 @@ function send_otp() {
 
 function onLoad() {
     document.addEventListener("deviceready", onDeviceReady, false);
+    console.log('qweqweqwe')
 }
 
 // Cordova is loaded and it is now safe to call Cordova methods
@@ -67,6 +69,7 @@ function onDeviceReady() {
 // Handle the back button
 //
 function onBackKeyDown() {
+    alert(1111);
     alert(location.hash);
 }
 
@@ -137,6 +140,7 @@ $(function(){
     document.addEventListener("backbutton", onBackKeyDown, false);
 
     function onBackKeyDown() {
+        alert(222222);
         alert(location.hash);
     }
 
