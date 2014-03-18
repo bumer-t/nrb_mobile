@@ -17,7 +17,7 @@ function getPhoneCode() {
 }
 
 function change_hash_url(hash_url) {
-//    location.hash = hash_url;
+    location.hash = hash_url;
 }
 
 //
@@ -75,7 +75,6 @@ function onBackKeyDown() {
 }
 
 $(function(){
-    $.mobile.phonegapNavigationEnabled = true;
     //для поля-телефон - фиксируем код страны
     var phone_code = getPhoneCode();
     $('#phone_number').attr("placeholder", phone_code);
@@ -139,56 +138,11 @@ $(function(){
 //    var value = window.localStorage.getItem("key");
     change_hash_url('homepage');
 
-    document.addEventListener("backbutton", onBackKeyDown, false);
+    document.addEventListener("backbutton", onBackKeyDown1, false);
 
-    function onBackKeyDown() {
+    function onBackKeyDown1() {
         alert(222222);
         alert(location.hash);
     }
-
-
-    var pageHistoryCount = 0;
-    var goingBack = false;
-
-    $(document).bind("pageshow", function(e, data) {
-        if (goingBack) {
-            goingBack = false;
-        } else {
-            pageHistoryCount++;
-            console.log("Showing page #"+pageHistoryCount);
-        }
-    });
-
-    function exitApp() {
-        console.log("Exiting app");
-        alert('Exiting app');
-        navigator.app.exitApp();
-    }
-
-    function onPressBack(e) {
-        e.preventDefault();
-        if(pageHistoryCount > 0) pageHistoryCount--;
-        if (pageHistoryCount == 0) {
-
-            navigator.notification.confirm("Are you sure you want to quit?", function(result){
-                if(result == 2){
-                    exitApp();
-                }else{
-                    pageHistoryCount++;
-                }
-            }, 'Quit My App', 'Cancel,Ok');
-        } else {
-            goingBack = true;
-            console.log("Going back to page #"+pageHistoryCount);
-            alert("Going back to page #"+pageHistoryCount);
-            window.history.back();
-        }
-    }
-
-    function deviceready() {
-        $(document).bind('backbutton', onPressBack);
-    }
-    $(document).bind('deviceready', deviceready);
-
 
 });
