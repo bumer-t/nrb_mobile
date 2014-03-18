@@ -55,9 +55,8 @@ function send_otp() {
 }
 
 function onLoad() {
-    $.mobile.phonegapNavigationEnabled = true;
     document.addEventListener("deviceready", onDeviceReady, false);
-    console.log('qweqweqwe')
+    console.log('onLoad - deviceready')
 }
 
 // Cordova is loaded and it is now safe to call Cordova methods
