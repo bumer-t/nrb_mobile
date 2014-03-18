@@ -56,7 +56,7 @@ function send_otp() {
 
 function onLoad() {
     document.addEventListener("deviceready", onDeviceReady, false);
-    console.log('onLoad - deviceready')
+    alert('onLoad - deviceready');
 }
 
 // Cordova is loaded and it is now safe to call Cordova methods
