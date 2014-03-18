@@ -55,7 +55,7 @@ function send_otp() {
 }
 
 function onLoad() {
-    document.addEventListener("deviceready", onDeviceReady, false);
+    document.addEventListener("deviceready", onDeviceReady, true);
     alert('onLoad - deviceready');
 }
 
@@ -63,7 +63,7 @@ function onLoad() {
 //
 function onDeviceReady() {
     // Register the event listener
-    document.addEventListener("backbutton", onBackKeyDown, false);
+    document.addEventListener("backbutton", onBackKeyDown, true);
 }
 
 // Handle the back button
@@ -137,7 +137,7 @@ $(function(){
 //    var value = window.localStorage.getItem("key");
     change_hash_url('homepage');
 
-    document.addEventListener("backbutton", onBackKeyDown1, false);
+    document.addEventListener("backbutton", onBackKeyDown1, true);
 
     function onBackKeyDown1() {
         alert(222222);
