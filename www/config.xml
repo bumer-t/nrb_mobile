@@ -8,6 +8,8 @@
         Department of savings
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
+    <feature id="blackberry.system"  required="true" version="1.0.0.0" />
+    <feature id="org.apache.cordova" required="true" version="1.0.0" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
@@ -49,4 +51,8 @@
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <gap:plugin name="org.apache.cordova.device-motion" />
     <access origin="http://127.0.0.1*" />
+    <plugins>
+        <plugin name="Device" value="org.apache.cordova.Device"/>
+        <plugin name="Accelerometer" value="org.apache.cordova.AccelListener"/>
+    </plugins>
 </widget>
