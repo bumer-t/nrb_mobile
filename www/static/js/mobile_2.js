@@ -16,6 +16,17 @@ function getPhoneCode() {
     }
 }
 
+function change_hash_url(hash_url) {
+//    location.hash = hash_url;
+}
+
+//
+function include_html(celector, template_name) {
+    celector.load(template_name+'.html', function(){$(this).trigger("create")});
+    change_hash_url(template_name);
+    document.addEventListener("backbutton", onBackKeyDown, false);
+}
+
 function send_phone() {
     if ($('#phone_number').val().length < 7) {
         alert('Не введен номер');
@@ -26,6 +37,7 @@ function send_phone() {
         return false;
     }
     //success
+    change_hash_url('auth_otp');
     $('#login_phone').hide();
     $('#login_code').show();
 }
@@ -36,49 +48,32 @@ function send_otp() {
         return false;
     }
     //success
-    alert('new page soon');
-//    $('#div_my_deposits').load('my_deposits.html').trigger("create");
-    $("#div_my_deposits").load('my_deposits.html', function(){$(this).trigger("create")});
+//    $("#div_my_deposits").load('my_deposits.html', function(){$(this).trigger("create")});
+    include_html($("#div_my_deposits"),'my_deposits');
     $('#div_login_forms').hide();
     $('#div_my_deposits').show();
 }
 
-var createCookie = function(name, value, days) {
-    var expires;
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toGMTString();
-    }
-    else {
-        expires = "";
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
+function onLoad() {
+    document.addEventListener("deviceready", onDeviceReady, true);
+    alert('onLoad - deviceready');
 }
 
-function getCookie(c_name) {
-    if (document.cookie.length > 0) {
-        c_start = document.cookie.indexOf(c_name + "=");
-        if (c_start != -1) {
-            c_start = c_start + c_name.length + 1;
-            c_end = document.cookie.indexOf(";", c_start);
-            if (c_end == -1) {
-                c_end = document.cookie.length;
-            }
-            return unescape(document.cookie.substring(c_start, c_end));
-        }
-    }
-    return "";
+// Cordova is loaded and it is now safe to call Cordova methods
+//
+function onDeviceReady() {
+    // Register the event listener
+    document.addEventListener("backbutton", onBackKeyDown, true);
+}
+
+// Handle the back button
+//
+function onBackKeyDown() {
+    alert(1111);
+    alert(location.hash);
 }
 
 $(function(){
-    //загрузка хидеров - старт
-    var template = doT.template($("#header_tpl").html());
-    var data = {'qwe':'qwe'};
-    $('.header').html(template(data));
-    $('.header').trigger('create');
-    //загрузка хидеров - конец
-
     //для поля-телефон - фиксируем код страны
     var phone_code = getPhoneCode();
     $('#phone_number').attr("placeholder", phone_code);
@@ -103,15 +98,16 @@ $(function(){
     });
 
     //клик по Депозиту
-//    $('.deposit').on('touchstart click', function(e){
-//        e.stopPropagation(); e.preventDefault();
-//        var id_deposit = ($(this).attr('id'));
-//        var title = $('#' + id_deposit).find('.dep_name').text();
-//        $('#title').text(title);
+    $('.deposit').on('touchstart click', function(e){
+        e.stopPropagation(); e.preventDefault();
+        var id_deposit = ($(this).attr('id'));
+        var title = $('#' + id_deposit).find('.dep_name').text();
+        $('#title').text(title);
+        include_html($("#div_deposit_info"),'deposit_info');
 //        $("#div_deposit_info").load('deposit_info.html', function(){$(this).trigger("create")});
-//        $('#deposits_list').hide();
-//        $('#div_deposit_info').show();
-//    });
+        $('#deposits_list').hide();
+        $('#div_deposit_info').show();
+    });
 
     //Показывает форму оформления депозита
     $(document).on('touchstart click', '.place_deposit', function(e){
@@ -120,7 +116,8 @@ $(function(){
         var temp_currency = $('#head_currency .ui-state-active').contents().attr('href');
         var currency = temp_currency.substring(1,temp_currency.length);
         $('#'+currency).find('table').hide();
-        $('#'+currency).find('.div_create_deposit').load('deposit_create.html', function(){$(this).trigger("create")});
+        include_html($('#'+currency).find('.div_create_deposit'),'deposit_create');
+//        $('#'+currency).find('.div_create_deposit').load('deposit_create.html', function(){$(this).trigger("create")});
         $('#'+currency).find('.div_create_deposit').show();
     });
 
@@ -128,17 +125,23 @@ $(function(){
     $(document).on('touchstart click', '#deposit_create', function(e){
         e.stopPropagation(); e.preventDefault();
         console.log('create');
-        $("#result").load('deposit_created_finish.html', function(){$(this).trigger("create")});
+//        $("#result").load('deposit_created_finish.html', function(){$(this).trigger("create")});
+        include_html($("#result"),'deposit_created_finish');
         $('#div_main').hide();
         $('#result').show();
     });
-
-    //
-//    createCookie('qwe1', '1111',2);
-//    alert(getCookie('qwe1'));
 
     //set
 //    window.localStorage.setItem("key", "value");
     //get
 //    var value = window.localStorage.getItem("key");
+    change_hash_url('homepage');
+
+    document.addEventListener("backbutton", onBackKeyDown1, true);
+
+    function onBackKeyDown1() {
+        alert(222222);
+        alert(location.hash);
+    }
+
 });

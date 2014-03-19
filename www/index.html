@@ -11,18 +11,25 @@
     <link rel="stylesheet" type="text/css" href="static/css/mobile.css" media="all"/>
 
     <script type="text/javascript" src="static/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="static/js/jsons_TEST.js"></script>
     <script type="text/javascript" src="static/js/jquery_numeric.js"></script>
     <script type="text/javascript" src="static/js/bootstrap-3.0.0.js"></script>
     <script type="text/javascript" src="static/js/jquery.mobile-1.4.0.js"></script>
+    <script type="text/javascript" src="static/js/doT.min.js"></script>
+    <script type="text/javascript" src="static/js/doT-config.js"></script>
     <script type="text/javascript" src="static/js/mobile.js"></script>
 </head>
 <body>
-<div data-role="page" data-theme="a">
-    <div data-role="header">
-        <h1><span id="title">Мои вклады</span></h1>
-        <a href="#" data-icon="gear" class="ui-btn-right">Options</a>
-    </div><!-- /header -->
 
+<script id="header_tpl" type="text/x-dot-template">
+    <div data-role="header">
+        <h1><span class="title">Мои вклады</span></h1>
+        <a href="#" data-icon="gear" class="ui-btn-right">Options</a>
+    </div>
+</script>
+
+<div data-role="page" data-theme="a">
+    <div data-role="header" class="header"></div>
     <div role="main" class="ui-content">
         <div id="div_main">
             <div data-role="tabs" id="tabs">
@@ -33,114 +40,43 @@
                     </ul>
                 </div>
                 <div id="one" class="ui-body-d ui-content">
-                    <ul data-role="listview" id="deposits_list">
-                        <li>
-                            <a href="#" class="deposit" id="dep_plus">
-                                <div class="row">
-                                    <div class="col-sm-6 text-center">
-                                        <div class="col-sm-12 height_center">
-                                            <p><span class="dep_name bold_green17">Депозит Плюс</span></p>
+                    <div data-role="content">
+                        <ul data-role="listview" id="deposits_list">
+                            <li>
+                                <a href="#deposit_standart" class="deposit" id="stand">
+                                    <div class="row">
+                                        <div class="col-sm-6 text-center">
+                                            <div class="col-sm-12 not_visible">1</div>
+                                            <div class="col-sm-12 not_visible">2</div>
+                                            <div class="col-sm-12">
+                                                <p><span class="dep_name bold_green17">Стандарт</span></p>
+                                            </div>
+                                            <div class="col-sm-12 not_visible">4</div>
+                                            <div class="col-sm-12 not_visible">5</div>
+                                        </div>
+                                        <div class="col-sm-6 text-center">
+                                            <div class="col-sm-1"></div>
+                                            <div class="col-sm-10 text-left">
+                                                <p>
+                                                    <span class="t_grey_17">19%</span> <span class="text_default">гривна</span>
+                                                </p>
+                                                <p>
+                                                    <span class="t_grey_17">10%</span> <span class="text_default">доллар</span>
+                                                </p>
+                                                <p>
+                                                    <span class="t_grey_17">8%</span> <span class="text_default">евро</span>
+                                                </p>
+                                                <p>
+                                                    <span class="t_grey_17">9%</span> <span class="text_default">рубли</span>
+                                                </p>
+                                            </div>
+                                            <div class="col-sm-1"></div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 text-center">
-                                        <div class="col-sm-1"></div>
-                                        <div class="col-sm-10 text-left height_center">
-                                            <p>
-                                                <span class="t_grey_17">20%</span> <span class="text_default">гривна</span>
-                                            </p>
-                                        </div>
-                                        <div class="col-sm-1"></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="deposit" id="stand">
-                                <div class="row">
-                                    <div class="col-sm-6 text-center">
-                                        <div class="col-sm-12 not_visible">1</div>
-                                        <div class="col-sm-12 not_visible">2</div>
-                                        <div class="col-sm-12">
-                                            <p><span class="dep_name bold_green17">Стандарт</span></p>
-                                        </div>
-                                        <div class="col-sm-12 not_visible">4</div>
-                                        <div class="col-sm-12 not_visible">5</div>
-                                    </div>
-                                    <div class="col-sm-6 text-center">
-                                        <div class="col-sm-1"></div>
-                                        <div class="col-sm-10 text-left">
-                                            <p>
-                                                <span class="t_grey_17">19%</span> <span class="text_default">гривна</span>
-                                            </p>
-                                            <p>
-                                                <span class="t_grey_17">10%</span> <span class="text_default">доллар</span>
-                                            </p>
-                                            <p>
-                                                <span class="t_grey_17">8%</span> <span class="text_default">евро</span>
-                                            </p>
-                                            <p>
-                                                <span class="t_grey_17">9%</span> <span class="text_default">рубли</span>
-                                            </p>
-                                        </div>
-                                        <div class="col-sm-1"></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="deposit" id="privat_vklad">
-                                <div class="row">
-                                    <div class="col-sm-6 text-center">
-                                        <div class="col-sm-12 t_grey_17 not_visible">1</div>
-                                        <div class="col-sm-12">
-                                            <p><span class="dep_name bold_green17">Приват-вклад</span></p>
-                                        </div>
-                                        <div class="col-sm-12 t_grey_17 not_visible">3</div>
-                                    </div>
-                                    <div class="col-sm-6 text-center">
-                                        <div class="col-sm-1"></div>
-                                        <div class="col-sm-10 text-left">
-                                            <p>
-                                                <span class="t_grey_17">8.5%</span> <span class="text_default">гривна</span>
-                                            </p>
-                                            <p>
-                                                <span class="t_grey_17">4%</span> <span class="text_default">доллар</span>
-                                            </p>
-                                            <p>
-                                                <span class="t_grey_17">3%</span> <span class="text_default">евро</span>
-                                            </p>
-                                        </div>
-                                        <div class="col-sm-1"></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="deposit" id="test">
-                                <div class="row">
-                                    <div class="col-sm-6 text-center">
-                                        <div class="col-sm-12 t_grey_17 not_visible">1</div>
-                                        <div class="col-sm-12">
-                                            <p><span class="dep_name bold_green17">Тест</span></p>
-                                        </div>
-                                        <div class="col-sm-12 t_grey_17 not_visible">3</div>
-                                    </div>
-                                    <div class="col-sm-6 text-center">
-                                        <div class="col-sm-1"></div>
-                                        <div class="col-sm-10 text-left">
-                                            <p>
-                                                <span class="t_grey_17">8.5%</span> <span class="text_default">гривна</span>
-                                            </p>
-                                            <p>
-                                                <span class="t_grey_17">4%</span> <span class="text_default">доллар</span>
-                                            </p>
-                                        </div>
-                                        <div class="col-sm-1"></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     <div id="div_deposit_info"></div>
                 </div>
                 <div id="two" class="ui-body-d ui-content">
@@ -204,5 +140,17 @@
     </div> /footer -->
 </div><!-- /page -->
 
+<div data-role="page" id="deposit_standart" data-theme="a">
+    <div data-role="header" class="header"></div>
+    <div data-role="content">
+        <div id="twi_list">bla-bla-bla</div>
+    </div>
+    <!--<div data-role="footer"></div>-->
+</div>
+
 </body>
 </html>
+
+<script type="text/javascript">
+
+</script>

@@ -72,6 +72,13 @@ function getCookie(c_name) {
 }
 
 $(function(){
+    //загрузка хидеров - старт
+    var template = doT.template($("#header_tpl").html());
+    var data = {'qwe':'qwe'};
+    $('.header').html(template(data));
+    $('.header').trigger('create');
+    //загрузка хидеров - конец
+
     //для поля-телефон - фиксируем код страны
     var phone_code = getPhoneCode();
     $('#phone_number').attr("placeholder", phone_code);
@@ -96,15 +103,15 @@ $(function(){
     });
 
     //клик по Депозиту
-    $('.deposit').on('touchstart click', function(e){
-        e.stopPropagation(); e.preventDefault();
-        var id_deposit = ($(this).attr('id'));
-        var title = $('#' + id_deposit).find('.dep_name').text();
-        $('#title').text(title);
-        $("#div_deposit_info").load('deposit_info.html', function(){$(this).trigger("create")});
-        $('#deposits_list').hide();
-        $('#div_deposit_info').show();
-    });
+//    $('.deposit').on('touchstart click', function(e){
+//        e.stopPropagation(); e.preventDefault();
+//        var id_deposit = ($(this).attr('id'));
+//        var title = $('#' + id_deposit).find('.dep_name').text();
+//        $('#title').text(title);
+//        $("#div_deposit_info").load('deposit_info.html', function(){$(this).trigger("create")});
+//        $('#deposits_list').hide();
+//        $('#div_deposit_info').show();
+//    });
 
     //Показывает форму оформления депозита
     $(document).on('touchstart click', '.place_deposit', function(e){
@@ -125,10 +132,10 @@ $(function(){
         $('#div_main').hide();
         $('#result').show();
     });
-    
+
     //
-    createCookie('qwe1', '1111',2);
-    alert(getCookie('qwe1'));
+//    createCookie('qwe1', '1111',2);
+//    alert(getCookie('qwe1'));
 
     //set
 //    window.localStorage.setItem("key", "value");
