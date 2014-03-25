@@ -72,12 +72,33 @@ function getCookie(c_name) {
 }
 
 $(function(){
-    //загрузка хидеров - старт
+//загрузка хидеров - старт
     var template = doT.template($("#header_tpl").html());
-    var data = {'qwe':'qwe'};
-    $('.header').html(template(data));
-    $('.header').trigger('create');
-    //загрузка хидеров - конец
+    var data = {};
+    $('.header').html(template(data)).trigger('create');
+//загрузка хидеров - конец
+
+//загрузка списка депозитов - старт
+    var template = doT.template($("#deposits_list").html());
+    var list_deposits = new Array();
+    $.each(depositOffers.order_deposits, function(deposit_key, deposit_value) {
+        var list_deposit_small_detail = DEPOSITS[deposit_value]['currencies'];
+        list_deposits.push({'deposit' : DEPOSITS[deposit_value],
+                            'list_deposit_small_detail': list_deposit_small_detail});
+    });
+    var data = {'deposits': list_deposits};
+    $('#deposits_list_placeholder').html(template(data)).trigger('create');
+//загрузка списка депозитов - конец
+
+//загрузка deposit_detail - старт
+    var template = doT.template($("#deposits_detail").html());
+    var data = {'deposits': list_deposits
+    };
+    $('#label_for_deposit_detail').after(template(data)).trigger('create');
+    $('.deposit_detail').find('.tab_deposit_detail_currency:first').addClass('ui-btn-active');
+    $('#label_for_deposit_detail').trigger('create');
+//загрузка deposit_detail - конец
+
 
     //для поля-телефон - фиксируем код страны
     var phone_code = getPhoneCode();
@@ -95,11 +116,13 @@ $(function(){
     //клик по клопке - Вход
     $('#but_auth').on('touchstart click', function(e){
         e.stopPropagation(); e.preventDefault();
-        if ($('#login_phone').is(":visible")) {
-            send_phone();
-        } else {
-            send_otp();
-        }
+
+
+//        if ($('#login_phone').is(":visible")) {
+//            send_phone();
+//        } else {
+//            send_otp();
+//        }
     });
 
     //клик по Депозиту
@@ -114,24 +137,24 @@ $(function(){
 //    });
 
     //Показывает форму оформления депозита
-    $(document).on('touchstart click', '.place_deposit', function(e){
-        e.stopPropagation(); e.preventDefault();
-        console.log('оформление');
-        var temp_currency = $('#head_currency .ui-state-active').contents().attr('href');
-        var currency = temp_currency.substring(1,temp_currency.length);
-        $('#'+currency).find('table').hide();
-        $('#'+currency).find('.div_create_deposit').load('deposit_create.html', function(){$(this).trigger("create")});
-        $('#'+currency).find('.div_create_deposit').show();
-    });
+//    $(document).on('touchstart click', '.place_deposit', function(e){
+//        e.stopPropagation(); e.preventDefault();
+//        console.log('оформление');
+//        var temp_currency = $('#head_currency .ui-state-active').contents().attr('href');
+//        var currency = temp_currency.substring(1,temp_currency.length);
+//        $('#'+currency).find('table').hide();
+//        $('#'+currency).find('.div_create_deposit').load('deposit_create.html', function(){$(this).trigger("create")});
+//        $('#'+currency).find('.div_create_deposit').show();
+//    });
 
     //здесь будет запрос на оформление депозита
-    $(document).on('touchstart click', '#deposit_create', function(e){
-        e.stopPropagation(); e.preventDefault();
-        console.log('create');
-        $("#result").load('deposit_created_finish.html', function(){$(this).trigger("create")});
-        $('#div_main').hide();
-        $('#result').show();
-    });
+//    $(document).on('touchstart click', '#deposit_create', function(e){
+//        e.stopPropagation(); e.preventDefault();
+//        console.log('create');
+//        $("#result").load('deposit_created_finish.html', function(){$(this).trigger("create")});
+//        $('#div_main').hide();
+//        $('#result').show();
+//    });
 
     //
 //    createCookie('qwe1', '1111',2);

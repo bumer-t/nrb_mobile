@@ -40,43 +40,7 @@
                     </ul>
                 </div>
                 <div id="one" class="ui-body-d ui-content">
-                    <div data-role="content">
-                        <ul data-role="listview" id="deposits_list">
-                            <li>
-                                <a href="#deposit_standart" class="deposit" id="stand">
-                                    <div class="row">
-                                        <div class="col-sm-6 text-center">
-                                            <div class="col-sm-12 not_visible">1</div>
-                                            <div class="col-sm-12 not_visible">2</div>
-                                            <div class="col-sm-12">
-                                                <p><span class="dep_name bold_green17">Стандарт</span></p>
-                                            </div>
-                                            <div class="col-sm-12 not_visible">4</div>
-                                            <div class="col-sm-12 not_visible">5</div>
-                                        </div>
-                                        <div class="col-sm-6 text-center">
-                                            <div class="col-sm-1"></div>
-                                            <div class="col-sm-10 text-left">
-                                                <p>
-                                                    <span class="t_grey_17">19%</span> <span class="text_default">гривна</span>
-                                                </p>
-                                                <p>
-                                                    <span class="t_grey_17">10%</span> <span class="text_default">доллар</span>
-                                                </p>
-                                                <p>
-                                                    <span class="t_grey_17">8%</span> <span class="text_default">евро</span>
-                                                </p>
-                                                <p>
-                                                    <span class="t_grey_17">9%</span> <span class="text_default">рубли</span>
-                                                </p>
-                                            </div>
-                                            <div class="col-sm-1"></div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <div id="deposits_list_placeholder"></div>
                     <div id="div_deposit_info"></div>
                 </div>
                 <div id="two" class="ui-body-d ui-content">
@@ -100,6 +64,7 @@
                                 </div>
                                 <div class="col-sm-1"></div>
                             </div>
+                            <!--
                             <div class="row">
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-10">
@@ -108,6 +73,7 @@
                                 </div>
                                 <div class="col-sm-1"></div>
                             </div>
+                            -->
                         </div>
                         <div id="login_code">
                             <div class="row">
@@ -134,23 +100,139 @@
         </div>
         <div id="result"></div>
     </div><!-- /content -->
-
-    <!--<div data-role="footer">
-        <h4>Page Footer</h4>
-    </div> /footer -->
+    <!--<div data-role="footer"></div> /footer -->
 </div><!-- /page -->
 
-<div data-role="page" id="deposit_standart" data-theme="a">
+<div data-role="page" id="DP001" data-theme="a">
     <div data-role="header" class="header"></div>
     <div data-role="content">
         <div id="twi_list">bla-bla-bla</div>
     </div>
     <!--<div data-role="footer"></div>-->
 </div>
+<div id="label_for_deposit_detail"></div>
 
 </body>
 </html>
 
-<script type="text/javascript">
-
+<!-- начало - список депозитов -->
+<script id="deposits_list" type="text/x-dot-template">
+    <ul data-role="listview">
+        [[~it.deposits :deposit:di]]
+            <li>
+                <a href="#[[=deposit.deposit.dep_code]]" class="deposit">
+                    <div class="row">
+                        <div class="col-sm-6 text-center">
+                            <div class="col-sm-12 not_visible">1</div>
+                            <div class="col-sm-12 not_visible">2</div>
+                            <div class="col-sm-12">
+                                <p><span class="dep_name bold_green17">[[=deposit.deposit.dep_name]]</span></p>
+                            </div>
+                            <div class="col-sm-12 not_visible">4</div>
+                            <div class="col-sm-12 not_visible">5</div>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-10 text-left">
+                                [[~deposit.list_deposit_small_detail :deposit_detail_small:ti]]
+                                    <p>
+                                        <span class="t_grey_17">[[=deposit_detail_small.deposit_max_rate]]%</span> <span class="text_default">[[=deposit_detail_small.curr_name]]</span>
+                                    </p>
+                                [[~]]
+                            </div>
+                            <div class="col-sm-1"></div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        [[~]]
+    </ul>
 </script>
+<!-- Конец - список депозитов -->
+
+<!-- начало - список депозитов -->
+<script id="deposits_detail" type="text/x-dot-template">
+    [[~it.deposits :deposit:di]]
+        <div data-role="page" id="[[=deposit.deposit.dep_code]]" class="deposit_detail" data-theme="a">
+            <div data-role="header" class="header"></div>
+            <div data-role="content">
+                <div class="row">
+                    <div class="col-sm-12">
+                        Вклад с ежемесячной выплатой процентов и возможностью пополнять свой депозитный счет. Ежемесячная надбавка к
+                        Вашей Зарплате
+                    </div>
+                </div>
+                <!-- ТАБы с валютами -->
+                <div data-role="tabs" id="tabs_currency">
+                    <div data-role="navbar" id="head_currency">
+                        <ul>
+                            [[~deposit.list_deposit_small_detail :deposit_small:ci]]
+                                <li><a class="tab_deposit_detail_currency" href="#[[=deposit.deposit.dep_code]]_[[=deposit_small.curr_id]]" data-ajax="false">[[=deposit_small.curr_short_name]]</a></li>
+                            [[~]]
+                        </ul>
+                        <!-- гривна -->
+
+                        [[~deposit.list_deposit_small_detail :deposit_small:ci2]]
+                            <div id="[[=deposit.deposit.dep_code]]_[[=deposit_small.curr_id]]" class="ui-body-d ui-content">
+                                <div class="row">
+                                    <div class="col-sm-6 text-right">
+                                        Возможность пополнения
+                                    </div>
+                                    <div class="col-sm-6 text-left">
+                                        <span class="t_grey2_15">[[=deposit.deposit.chance_recharge]]</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 text-right">
+                                        Возможность снятия части вклада
+                                    </div>
+                                    <div class="col-sm-6 text-left">
+                                        <span class="t_grey2_15">[[=deposit.deposit.partial_withdrawsl]]</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 text-right">
+                                        Выплата процентов
+                                    </div>
+                                    <div class="col-sm-6 text-left">
+                                        <span class="t_grey2_15">[[=deposit.deposit.percent_payment]]</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 text-right">
+                                        Минимальная сумма вклада
+                                    </div>
+                                    <div class="col-sm-6 text-left">
+                                        [[ var min_sum=deposit_small.terms[0].minSum; ]]
+                                        <span class="t_grey2_15">[[=min_sum]] [[=deposit_small.curr_name]]</span>
+                                    </div>
+                                </div>
+                                <!-- таблица с оформлением -->
+                                <table class="table table_custom">
+                                    <thead>
+                                        <tr>
+                                            <th>срок, месяцев</th>
+                                            <th>% ставка</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        [[~deposit_small.terms :term:tt]]
+                                            <tr>
+                                                <td>[[=term.period]]</td>
+                                                <td>[[=term.base_rate]]</td>
+                                                <td><input class="place_deposit btn btn-success" value="Оформить" type="submit" /></td>
+                                            </tr>
+                                        [[~]]
+                                    </tbody>
+                                </table>
+                            </div>
+                        [[~]]
+                    </div>
+                </div>
+            </div>
+            <!--<div data-role="footer"></div>-->
+        </div>
+    [[~]]
+</script>
+<!-- Конец - список депозитов -->
