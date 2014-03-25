@@ -71,21 +71,26 @@ function getCookie(c_name) {
     return "";
 }
 
-$(function(){
-//загрузка хидеров - старт
-    var template = doT.template($("#header_tpl").html());
-    var data = {};
-    $('.header').html(template(data)).trigger('create');
-//загрузка хидеров - конец
+function getCurrentFilename() {
+    var filename_index = location.pathname.lastIndexOf("/") + 1;
+    var current_filename = location.pathname.substr(filename_index);
+    return current_filename;
+}
 
+
+$(function(){
 //загрузка списка депозитов - старт
     var template = doT.template($("#deposits_list").html());
     var list_deposits = new Array();
+    var header_name_deposit = {};
     $.each(depositOffers.order_deposits, function(deposit_key, deposit_value) {
         var list_deposit_small_detail = DEPOSITS[deposit_value]['currencies'];
+        header_name_deposit[DEPOSITS[deposit_value].dep_code] = DEPOSITS[deposit_value].dep_name;
         list_deposits.push({'deposit' : DEPOSITS[deposit_value],
                             'list_deposit_small_detail': list_deposit_small_detail});
     });
+    header_name_deposit['main_page'] = 'Оформить депозит';
+    header_name_deposit['my_deposits_page'] = 'Мои вклады';
     var data = {'deposits': list_deposits};
     $('#deposits_list_placeholder').html(template(data)).trigger('create');
 //загрузка списка депозитов - конец
@@ -98,6 +103,18 @@ $(function(){
     $('.deposit_detail').find('.tab_deposit_detail_currency:first').addClass('ui-btn-active');
     $('#label_for_deposit_detail').trigger('create');
 //загрузка deposit_detail - конец
+
+//загрузка хидеров - старт
+    var template = doT.template($("#header_tpl").html());
+    $.each($('.header'), function(header_key, header_value) {
+        var id_div_for_title = $(header_value).closest(".header_title").attr('id');
+        var data = {
+            'header_name' : header_name_deposit[id_div_for_title],
+            'current_filename': getCurrentFilename()
+        };
+        $(header_value).html(template(data)).trigger('create');
+    });
+//загрузка хидеров - конец
 
 
     //для поля-телефон - фиксируем код страны
