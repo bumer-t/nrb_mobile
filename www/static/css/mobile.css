@@ -1,0 +1,82 @@
+/*размер шрифта в инпуте*/
+.input_size {
+    font-size: 30px!important;
+}
+
+.img_size {
+    width: 50%;
+    max-width: 323px;
+    max-height: 329px;
+}
+
+#space_but_top {
+    margin-top: 38px;
+}
+
+#result {
+    margin-left: 16px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.text_bold_green {
+    color: #1D9400;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.bold_green17 {
+    color: #1D9400;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.t_black_21 {
+    color: #000000;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.t_black_15 {
+    color: #000000;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.t_grey_15 {
+    color: #878787;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.t_grey_17 {
+    color: #878787;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.text_default {
+    font-size: 15px;
+}
+
+/*#login_code, #div_my_deposits, #div_deposit_info, .div_create_deposit, #result, .update-card-list-btn {*/
+    /*display: none;*/
+/*}*/
+
+.h2_green {
+    color: #1D9400;
+}
+
+.not_visible {
+    opacity : 0;
+}
+
+.background_grey {
+    background: #e3e3e3;
+}
+
+.card_input {
+    width:90% !important;
+}

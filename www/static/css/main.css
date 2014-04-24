@@ -1,0 +1,132 @@
+.scroller {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    top: 100px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin:0;
+    width: 100%
+}
+
+.row {
+    margin: 0 !important;
+}
+input:disabled {
+    color:#ccc;
+}
+
+input.btn-success,  {
+    height: 40px;
+    font-weight: bold;
+    font-size: 18px;
+}
+    .no-gutter [class*="sm"] {
+        padding:0;
+        margin: 0;
+    }
+
+/*@media (min-width: 768px){*/
+    /*.no-gutter [class*="sm-10"] {*/
+        /*padding:0;*/
+    /*}*/
+/*}*/
+
+.table_td_dep_list_l {
+    width: 60%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table_td_dep_list_r {
+    width: 40%;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table_td_mydep_list_l {
+    width: 60%;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table_td_mydep_list_r {
+    width: 40%;
+    text-align: right;
+    vertical-align: middle;
+}
+
+/*хедер ------------------------------------------------------------------------------------------------------- начало*/
+.background_header {
+    background: #236e0e; /* Old browsers */
+    background: -moz-linear-gradient(top,  #236e0e 0%, #53a63a 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#236e0e), color-stop(100%,#53a63a)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #236e0e 0%,#53a63a 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #236e0e 0%,#53a63a 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #236e0e 0%,#53a63a 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #236e0e 0%,#53a63a 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#236e0e', endColorstr='#53a63a',GradientType=0 ); /* IE6-9 */
+}
+
+.header_text {
+    color:#ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+/*перекрытие ratchera - start*/
+.bar-tab .tab-item {
+    color: #424242;
+    font-weight:bold;
+    background: #e6e6e6;
+    text-decoration: none;
+}
+
+.bar-tab .tab-item.active, .bar-tab .tab-item:active {
+    color: black;
+    font-weight:bold;
+    background: #fafafa;
+    box-shadow: inset 0 -6px 0 #59bd3a;
+}
+
+.icon {
+    color: #ffffff;
+}
+
+/*перекрытие ratchera - end*/
+/*перекрытие bootstap - start*/
+.nav-tabs > li > a {
+    color: #424242;
+    font-weight:bold;
+    background: #e6e6e6;
+    text-decoration: none;
+}
+
+.nav-tabs > li.active > a {
+    color: black;
+    font-weight:bold;
+    background: #fafafa;
+    box-shadow: inset 0 -6px 0 #59bd3a;
+}
+
+.btn-success {
+    background: #59bd3a;
+    color: #ffffff;
+}
+/*перекрытие ratchera - end*/
+/*хедер -------------------------------------------------------------------------------------------------------- конец*/
+
+body {
+    background-color: #f2f2f2;
+}
+
+*::-webkit-input-placeholder {
+    color:red;
+}
+.table-view-cell {
+    position: relative;
+    padding: 11px 40px 11px 15px;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+}
