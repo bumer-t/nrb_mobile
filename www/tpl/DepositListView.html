@@ -1,0 +1,27 @@
+<ul class="table-view">
+    [[?it.deposits]]
+    [[~it.deposits :deposit:di]]
+    <li class="table-view-cell">
+        <a href="[[=app.utils.url('deposit/view', deposit.deposit.dep_code)]]" class="navigate-right">
+            <table style="width: 100%">
+                <tr>
+                    <td class="table_td_dep_list_l">
+                        <p><span class="dep_name bold_green17">[[=deposit.deposit.dep_name]]</span></p>
+                    </td>
+                    <td class="table_td_dep_list_r">
+                        [[~deposit.list_deposit_small_detail :deposit_detail_small:ti]]
+                        <p>
+                            <span class="t_grey_17">[[=deposit_detail_small.deposit_max_rate]]%</span>
+                            <span class="text_default">[[=deposit_detail_small.curr_name]]</span>
+                        </p>
+                        [[~]]
+                    </td>
+                </tr>
+            </table>
+        </a>
+    </li>
+    [[~]]
+    [[??]]
+    <img class="img_size" src="static/images/preloader_p24.gif" style="width:20px;height:20px; margin: 20px" />
+    [[?]]
+</ul>

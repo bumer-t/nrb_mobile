@@ -1,179 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login</title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <link href="css/pageslider.css" rel="stylesheet" />
+    <!--<link href="topcoat/css/topcoat-mobile-dark.min.css" rel="stylesheet" />-->
     <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
-    <link rel="stylesheet" type="text/css" href="static/css/bootstrap-3.0.0.css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="static/css/jquery.mobile-1.4.0.css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="static/css/mobile.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap-3.0.0.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="lib/ratchet/css/ratchet.min.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="lib/ratchet/css/ratchet-theme-android.min.css" media="all"/>
+    <!--<link rel="stylesheet" type="text/css" href="lib/ratchet/css/ratchet-theme-ios.css" media="all"/>-->
+    <!--<link rel="stylesheet" type="text/css" href="static/css/jquery.mobile-1.4.0.css" media="all"/>-->
+    <link rel="stylesheet" type="text/css" href="css/coverage_bootstrap.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/mobile.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
 
-    <script type="text/javascript" src="static/js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="static/js/jsons_TEST.js"></script>
-    <script type="text/javascript" src="static/js/jquery_numeric.js"></script>
-    <script type="text/javascript" src="static/js/bootstrap-3.0.0.js"></script>
-    <script type="text/javascript" src="static/js/jquery.mobile-1.4.0.js"></script>
-    <script type="text/javascript" src="static/js/doT.min.js"></script>
-    <script type="text/javascript" src="static/js/doT-config.js"></script>
-    <script type="text/javascript" src="static/js/mobile.js"></script>
+    <!--<script src="cordova.js"></script>-->
+    <!--<script src="cordova_plugins.js"></script>-->
+    <script src="lib/jquery-1.10.2.min.js"></script>
+    <script src="lib/jquery_numeric.js"></script>
+    <!--<script src="lib/jquery_mobile/jquery.mobile-1.4.0.min.js"></script>-->
+    <!--<script src="lib/jquery_mobile/jquery-1.9.1.min.js"></script>-->
+    <script src="lib/underscore-min.js"></script>
+    <script src="lib/backbone-min.js"></script>
+    <script src="lib/bootstrap.min-3.0.0.js"></script>
+    <!--<script src="lib/ratchet/js/ratchet.min.js"></script>-->
+    <script src="lib/doT.min.js"></script>
+    <script src="lib/doT-config.js"></script>
+    <script src="lib/pageslider.js"></script>
 </head>
-<body>
-<script id="header_tpl" type="text/x-dot-template">
-    <div data-role="header">
-        <h1><span class="title">[[=it.header_name]]</span></h1>
-        <a href="#" data-icon="gear" class="ui-btn-right">Options</a>
-        <div data-role="navbar">
-            <ul>
-                <li><a href="index.html"  class="ui-btn-active ui-state-persist" >% ставки</a></li>
-                <li><a href="my_deposits.html" >Мои депозиты</a></li>
-            </ul>
-        </div>
-    </div>
-</script>
+<body ondragstart="return false" onselectstart="return false">
+    <!-- load stubs -->
+    <script src="js/stub/deopsitOffers.js"></script>
+    <script src="js/stub/myDeposits.js"></script>
+    <!-- load core -->
+    <script src="js/app.js"></script>
+    <script src="js/app-config.js"></script>
+    <script src="js/app-session.js"></script>
 
-<div data-role="page" data-theme="a" class="header_title" id="main_page">
-    <div data-role="header" class="header"></div>
-    <!-- /header -->
+    <script src="js/utils/templates.js"></script>
+    <script src="js/utils/mix.js"></script>
+    <script src="js/routers/AppRouter.js"></script>
+    <!-- load models -->
+    <script src="js/adapters/DepositAdapter.js"></script>
+    <script src="js/adapters/OpenDeposit.js"></script>
+    <script src="js/models/DepositModel.js"></script>
 
-    <div role="main" class="ui-content">
-        <div data-role="content">
-            <div id="deposits_list_placeholder" ></div>
-        </div>
-    </div>
-    <!-- /content -->
+    <script src="js/adapters/CardAdapter.js"></script>
+    <script src="js/models/CardModel.js"></script>
 
-    <!--<div data-role="footer">
-        <h4>Page Footer</h4>
-    </div> /footer -->
+    <script src="js/adapters/DepositOffersAdapter.js"></script>
+    <script src="js/models/DepositOffersModel.js"></script>
 
-</div>
-<!-- /page -->
+    <!-- load views -->
+    <script src="js/views/LayoutBase.js"></script>
+    <script src="js/views/LandingView.js"></script>
+    <script src="js/views/HeaderView.js"></script>
+    <script src="js/views/SettingsView.js"></script>
+    <script src="js/views/LoginView.js"></script>
+    <script src="js/views/CardSelectorView.js"></script>
 
+    <!-- Deposits view-->
+    <script src="js/views/DepositListView.js"></script>
+    <script src="js/views/DepositView.js"></script>
+    <script src="js/views/DepositOpenFormView.js"></script>
+    <script src="js/views/DepositResultView.js"></script>
+    <!-- MyDeposits view-->
+    <script src="js/views/MyDepositsIndexView.js"></script>
+    <script src="js/views/MyDepositsDepositListView.js"></script>
+    <script src="js/views/MyDepositsMoreAboutView.js"></script>
 
-<div id="label_for_deposit_detail"></div>
 </body>
 </html>
-
-<!-- начало - список депозитов -->
-<script id="deposits_list" type="text/x-dot-template">
-    <ul data-role="listview">
-        [[~it.deposits :deposit:di]]
-        <li>
-            <a href="#[[=deposit.deposit.dep_code]]" class="deposit">
-                <div class="row">
-                    <div class="col-sm-6 text-center">
-                        <div class="col-sm-12 not_visible">1</div>
-                        <div class="col-sm-12 not_visible">2</div>
-                        <div class="col-sm-12">
-                            <p><span class="dep_name bold_green17">[[=deposit.deposit.dep_name]]</span></p>
-                        </div>
-                        <div class="col-sm-12 not_visible">4</div>
-                        <div class="col-sm-12 not_visible">5</div>
-                    </div>
-                    <div class="col-sm-6 text-center">
-                        <div class="col-sm-1"></div>
-                        <div class="col-sm-10 text-left">
-                            [[~deposit.list_deposit_small_detail :deposit_detail_small:ti]]
-                            <p>
-                                <span class="t_grey_17">[[=deposit_detail_small.deposit_max_rate]]%</span> <span class="text_default">[[=deposit_detail_small.curr_name]]</span>
-                            </p>
-                            [[~]]
-                        </div>
-                        <div class="col-sm-1"></div>
-                    </div>
-                </div>
-            </a>
-        </li>
-        [[~]]
-    </ul>
-</script>
-<!-- Конец - список депозитов -->
-
-<!-- начало - список депозитов -->
-<script id="deposits_detail" type="text/x-dot-template">
-    [[~it.deposits :deposit:di]]
-    <div data-role="page" id="[[=deposit.deposit.dep_code]]" class="deposit_detail header_title" data-theme="a">
-        <div data-role="header" class="header"></div>
-        <div data-role="content">
-            <div class="row">
-                <div class="col-sm-12">
-                    Вклад с ежемесячной выплатой процентов и возможностью пополнять свой депозитный счет. Ежемесячная надбавка к
-                    Вашей Зарплате
-                </div>
-            </div>
-            <!-- ТАБы с валютами -->
-            <div data-role="tabs" id="tabs_currency">
-                <div data-role="navbar" id="head_currency">
-                    <ul>
-                        [[~deposit.list_deposit_small_detail :deposit_small:ci]]
-                        <li><a class="tab_deposit_detail_currency" href="#[[=deposit.deposit.dep_code]]_[[=deposit_small.curr_id]]" data-ajax="false">[[=deposit_small.curr_short_name]]</a></li>
-                        [[~]]
-                    </ul>
-                    <!-- гривна -->
-
-                    [[~deposit.list_deposit_small_detail :deposit_small:ci2]]
-                    <div id="[[=deposit.deposit.dep_code]]_[[=deposit_small.curr_id]]" class="ui-body-d ui-content">
-                        <div class="row">
-                            <div class="col-sm-6 text-right">
-                                Возможность пополнения
-                            </div>
-                            <div class="col-sm-6 text-left">
-                                <span class="t_grey2_15">[[=deposit.deposit.chance_recharge]]</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6 text-right">
-                                Возможность снятия части вклада
-                            </div>
-                            <div class="col-sm-6 text-left">
-                                <span class="t_grey2_15">[[=deposit.deposit.partial_withdrawsl]]</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6 text-right">
-                                Выплата процентов
-                            </div>
-                            <div class="col-sm-6 text-left">
-                                <span class="t_grey2_15">[[=deposit.deposit.percent_payment]]</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6 text-right">
-                                Минимальная сумма вклада
-                            </div>
-                            <div class="col-sm-6 text-left">
-                                [[ var min_sum=deposit_small.terms[0].minSum; ]]
-                                <span class="t_grey2_15">[[=min_sum]] [[=deposit_small.curr_name]]</span>
-                            </div>
-                        </div>
-                        <!-- таблица с оформлением -->
-                        <table class="table table_custom">
-                            <thead>
-                            <tr>
-                                <th>срок, месяцев</th>
-                                <th>% ставка</th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            [[~deposit_small.terms :term:tt]]
-                            <tr>
-                                <td>[[=term.period]]</td>
-                                <td>[[=term.base_rate]]</td>
-                                <td><input class="place_deposit btn btn-success" id="[[=deposit.deposit.dep_code]]_[[=deposit_small.curr_id]]_[[=term.type_code]]" value="Оформить" type="submit" /></td>
-                            </tr>
-                            [[~]]
-                            </tbody>
-                        </table>
-                    </div>
-                    [[~]]
-                </div>
-            </div>
-        </div>
-        <!--<div data-role="footer"></div>-->
-    </div>
-    [[~]]
-</script>
-<!-- Конец - список депозитов -->

@@ -1,0 +1,87 @@
+[[var deposit=it;]]
+<div class="row">
+    <div class="col-sm-12">
+        Вклад с ежемесячной выплатой процентов и возможностью пополнять свой депозитный счет. Ежемесячная надбавка к
+        Вашей Зарплате
+    </div>
+</div>
+<!-- ТАБы с валютами -->
+<ul id="tabs" class="nav nav-tabs nav-tabs_custom[[=it.deposit.currencies_count]] text-center" data-tabs="tabs">
+    [[~deposit.list_deposit_small_detail :deposit_small:ci]]
+    <li class="[[? it.currency_current === deposit_small.curr_id ]]active[[??]]tab_ul_deposit_detail_currency[[?]]">
+        <a href="#[[=deposit.deposit.dep_code]]_[[=deposit_small.curr_id]]"
+           data-toggle="tab">[[=deposit_small.curr_short_name.capitalize()]]</a>
+
+    </li>
+    [[~]]
+</ul>
+<!-- гривна -->
+<div id="my-tab-content" class="tab-content">
+    [[~deposit.list_deposit_small_detail :deposit_small:ci2]]
+    <div id="[[=deposit.deposit.dep_code]]_[[=deposit_small.curr_id]]" class="tab-pane [[? it.currency_current === deposit_small.curr_id ]]active[[??]]tab_li_deposit_detail_currency[[?]]">
+        <table class="table table_custom_dt_1">
+            <tbody>
+            <tr>
+                <td class="td_left td_radius_top">
+                    Возможность пополнения
+                </td>
+                <td class="td_radius_top">
+                    <span class="t_grey_bold">[[=deposit.deposit.chance_recharge.toLowerCase()]]</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_left">
+                    Возможность снятия части вклада
+                </td>
+                <td>
+                    <span class="t_grey_bold">[[=deposit.deposit.partial_withdrawsl.toLowerCase()]]</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_left">
+                    Выплата процентов
+                </td>
+                <td>
+                    <span class="t_grey_bold">[[=deposit.deposit.percent_payment.toLowerCase()]]</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_left td_radius_bottom">
+                    Минимальная сумма вклада
+                </td>
+                <td class="td_radius_bottom">
+                    [[ var min_sum=deposit_small.terms[0].minSum; ]]
+                    <span class="t_grey_bold">[[=min_sum]] [[=deposit_small.curr_short_name]]</span>
+                </td>
+            </tr>
+            <tbody>
+        </table>
+        <!-- таблица с оформлением -->
+        <table class="table table_custom_dt_2">
+            <thead class="table_head">
+            <tr>
+                <th>срок,<br> месяцев</th>
+                <th>% ставка</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            [[~deposit_small.terms :term:tt]]
+            <tr>
+                [[var term_period = term.period.split(' ')[0];]]
+                <td>[[=term_period]]</td>
+                <td><span class="bold">[[=term.base_rate]]</span></td>
+                <td>
+                    <a class="btn btn-success"
+                       id="[[=deposit.deposit.dep_code]]_[[=deposit_small.curr_id]]_[[=term.type]]"
+                       href="[[=app.utils.url('deposit/openformview', [deposit.deposit.dep_code,deposit_small.curr_id,term.type])]]">
+                        Оформить
+                    </a>
+                </td>
+            </tr>
+            [[~]]
+            </tbody>
+        </table>
+    </div>
+    [[~]]
+</div>

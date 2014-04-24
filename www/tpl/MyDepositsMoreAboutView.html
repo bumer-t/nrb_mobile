@@ -1,0 +1,19 @@
+<br />
+[[var deposit=it;]]
+<div data-role="page" id="[[=deposit.account]]" data-theme="a" class="ui-bar ui-bar-a and ui-corner-all">
+    <div data-role="header" class="header"></div>
+
+    <div id="detail_main" class="ui-body ui-body-a and ui-corner-all" style="text-align: center">
+        <div><span class="text_bold_green text-center">[[=deposit.current_sum]] [[=deposit.currency_short_name]]</span></div>
+        <div><span class="t_grey_17 text-center">[[=deposit.rate]]% годовых</span></div>
+    </div>
+    <br/>
+
+
+    <ul id="tabs" class="nav nav-tabs nav-tabs_custom3 text-center" data-tabs="tabs">
+        <li class="tab_ul_deposit_detail_currency active"> <a href="#statements" data-toggle="tab">Выписка</a> </li>
+        <li class="tab_ul_deposit_detail_currency"> <a href="#about" data-toggle="tab">О вкладе</a> </li>
+        <li class="tab_ul_deposit_detail_currency"> <a href="#topup" data-toggle="tab">Пополнить</a> </li>
+    </ul>
+   <div id="detail_box" class="ui-body ui-body-a and ui-corner-all">.</div>
+</div>

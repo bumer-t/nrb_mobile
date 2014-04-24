@@ -1,0 +1,23 @@
+<ul class="table-view">
+    [[?this.templateData.deposits.length]]
+    [[~this.templateData.deposits :deposit:di]]
+    <li class="table-view-cell deposit-item" data-account="[[=deposit.account]]">
+            <table style="width: 100%">
+                <tr>
+                    <td class="table_td_mydep_list_l">
+                        <span class="t_black_21">[[=deposit.name]]</span>
+                        <br>
+                        <span class="t_grey_15">до [[=deposit.date_end]]</span>
+                    </td>
+                    <td class="table_td_mydep_list_r">
+                        <div><span class="text_bold_green">[[=number_format(deposit.current_sum, 2, '.', ' ')]]</span></div>
+                        <div><span class="text_default">[[=deposit.currency_short_name]]</span></div>
+                    </td>
+                </tr>
+            </table>
+    </li>
+    [[~]]
+    [[??]]
+    <img class="img_size" src="static/images/preloader_p24.gif" style="width:20px;height:20px; margin: 20px auto; display:block;" />
+    [[?]]
+</ul>

@@ -1,0 +1,78 @@
+[[var deposit=it;]]
+<div class="row">
+    <div class="col-sm-12">
+        Вклад с ежемесячной выплатой процентов и возможностью пополнять свой депозитный счет. Ежемесячная надбавка к
+        Вашей Зарплате
+    </div>
+</div>
+<!-- ТАБы с валютами -->
+<div data-role="tabs" id="tabs_currency">
+    <div data-role="navbar" id="head_currency">
+        <ul>
+            [[~deposit.list_deposit_small_detail :deposit_small:ci]]
+            <li><a class="tab_deposit_detail_currency" href="#[[=deposit.deposit.dep_code]]_[[=deposit_small.curr_id]]" data-ajax="false">[[=deposit_small.curr_short_name]]</a></li>
+            [[~]]
+        </ul>
+        <!-- гривна -->
+
+        [[~deposit.list_deposit_small_detail :deposit_small:ci2]]
+        <div id="[[=deposit.deposit.dep_code]]_[[=deposit_small.curr_id]]" class="ui-body-d ui-content">
+            <div class="row">
+                <div class="col-sm-6 text-right">
+                    Возможность пополнения
+                </div>
+                <div class="col-sm-6 text-left">
+                    <span class="t_grey2_15">[[=deposit.deposit.chance_recharge]]</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 text-right">
+                    Возможность снятия части вклада
+                </div>
+                <div class="col-sm-6 text-left">
+                    <span class="t_grey2_15">[[=deposit.deposit.partial_withdrawsl]]</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 text-right">
+                    Выплата процентов
+                </div>
+                <div class="col-sm-6 text-left">
+                    <span class="t_grey2_15">[[=deposit.deposit.percent_payment]]</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 text-right">
+                    Минимальная сумма вклада
+                </div>
+                <div class="col-sm-6 text-left">
+                    [[ var min_sum=deposit_small.terms[0].minSum; ]]
+                    <span class="t_grey2_15">[[=min_sum]] [[=deposit_small.curr_name]]</span>
+                </div>
+            </div>
+            <div class="content_0_deposit_detail"></div>
+            <div class="content_1_deposit_detail">
+                <!-- таблица с оформлением -->
+                <table class="table table_custom_dt_2">
+                    <thead>
+                    <tr>
+                        <th>срок, месяцев</th>
+                        <th>% ставка</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    [[~deposit_small.terms :term:tt]]
+                    <tr>
+                        <td>[[=term.period]]</td>
+                        <td>[[=term.base_rate]]</td>
+                        <td><input class="place_deposit btn btn-success" id="[[=deposit.deposit.dep_code]]_[[=deposit_small.curr_id]]_[[=term.type_code]]" value="Оформить" type="submit" /></td>
+                    </tr>
+                    [[~]]
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        [[~]]
+    </div>
+</div>

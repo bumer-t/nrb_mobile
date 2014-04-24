@@ -1,0 +1,268 @@
+@media (min-width: 100px) {
+    .container {
+        max-width: 96px;
+    }
+    .col-sm-1,
+    .col-sm-2,
+    .col-sm-3,
+    .col-sm-4,
+    .col-sm-5,
+    .col-sm-6,
+    .col-sm-7,
+    .col-sm-8,
+    .col-sm-9,
+    .col-sm-10,
+    .col-sm-11 {
+        float: left;
+    }
+    .col-sm-1 {
+        width: 8.333333333333332%;
+    }
+    .col-sm-2 {
+        width: 16.666666666666664%;
+    }
+    .col-sm-3 {
+        width: 25%;
+    }
+    .col-sm-4 {
+        width: 33.33333333333333%;
+    }
+    .col-sm-5 {
+        width: 41.66666666666667%;
+    }
+    .col-sm-6 {
+        width: 50%;
+    }
+    .col-sm-7 {
+        width: 58.333333333333336%;
+    }
+    .col-sm-8 {
+        width: 66.66666666666666%;
+    }
+    .col-sm-9 {
+        width: 75%;
+    }
+    .col-sm-10 {
+        width: 83.33333333333334%;
+    }
+    .col-sm-11 {
+        width: 91.66666666666666%;
+    }
+    .col-sm-12 {
+        width: 100%;
+    }
+    .col-sm-push-1 {
+        left: 8.333333333333332%;
+    }
+    .col-sm-push-2 {
+        left: 16.666666666666664%;
+    }
+    .col-sm-push-3 {
+        left: 25%;
+    }
+    .col-sm-push-4 {
+        left: 33.33333333333333%;
+    }
+    .col-sm-push-5 {
+        left: 41.66666666666667%;
+    }
+    .col-sm-push-6 {
+        left: 50%;
+    }
+    .col-sm-push-7 {
+        left: 58.333333333333336%;
+    }
+    .col-sm-push-8 {
+        left: 66.66666666666666%;
+    }
+    .col-sm-push-9 {
+        left: 75%;
+    }
+    .col-sm-push-10 {
+        left: 83.33333333333334%;
+    }
+    .col-sm-push-11 {
+        left: 91.66666666666666%;
+    }
+    .col-sm-pull-1 {
+        right: 8.333333333333332%;
+    }
+    .col-sm-pull-2 {
+        right: 16.666666666666664%;
+    }
+    .col-sm-pull-3 {
+        right: 25%;
+    }
+    .col-sm-pull-4 {
+        right: 33.33333333333333%;
+    }
+    .col-sm-pull-5 {
+        right: 41.66666666666667%;
+    }
+    .col-sm-pull-6 {
+        right: 50%;
+    }
+    .col-sm-pull-7 {
+        right: 58.333333333333336%;
+    }
+    .col-sm-pull-8 {
+        right: 66.66666666666666%;
+    }
+    .col-sm-pull-9 {
+        right: 75%;
+    }
+    .col-sm-pull-10 {
+        right: 83.33333333333334%;
+    }
+    .col-sm-pull-11 {
+        right: 91.66666666666666%;
+    }
+    .col-sm-offset-1 {
+        margin-left: 8.333333333333332%;
+    }
+    .col-sm-offset-2 {
+        margin-left: 16.666666666666664%;
+    }
+    .col-sm-offset-3 {
+        margin-left: 25%;
+    }
+    .col-sm-offset-4 {
+        margin-left: 33.33333333333333%;
+    }
+    .col-sm-offset-5 {
+        margin-left: 41.66666666666667%;
+    }
+    .col-sm-offset-6 {
+        margin-left: 50%;
+    }
+    .col-sm-offset-7 {
+        margin-left: 58.333333333333336%;
+    }
+    .col-sm-offset-8 {
+        margin-left: 66.66666666666666%;
+    }
+    .col-sm-offset-9 {
+        margin-left: 75%;
+    }
+    .col-sm-offset-10 {
+        margin-left: 83.33333333333334%;
+    }
+    .col-sm-offset-11 {
+        margin-left: 91.66666666666666%;
+    }
+}
+
+/*депозит детаил------------------------------------------------------------------------------------------------ старт*/
+.nav-tabs_custom1 > li {
+    width:100%;
+}
+
+.nav-tabs_custom2 > li {
+    width:50%;
+}
+
+.nav-tabs_custom3 > li {
+    width:33.33%;
+}
+.nav-tabs_custom4 > li {
+    width:25%;
+}
+
+.nav-tabs_custom5 > li {
+    width:20%;
+}
+
+.table_custom_dt_2 {
+    padding-left: 2%;
+    padding-right: 2%;
+    border-collapse: separate;
+    border-spacing: 0 1px;
+}
+
+.table_custom_dt_2 th, .table_custom_dt_2 td {
+    text-align: center!important;
+    vertical-align: middle!important;
+}
+
+.panel-default {
+    margin-bottom: 0px;
+}
+
+.t_grey_bold {
+    color: #424242;
+    font-weight: bold;
+}
+
+.table_head {
+    background: #9c9c9c; /* Old browsers */
+    background: -moz-linear-gradient(top,  #9c9c9c 0%, #b5b5b5 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9c9c9c), color-stop(100%,#b5b5b5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #9c9c9c 0%,#b5b5b5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #9c9c9c 0%,#b5b5b5 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #9c9c9c 0%,#b5b5b5 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #9c9c9c 0%,#b5b5b5 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9c9c9c', endColorstr='#b5b5b5',GradientType=0 ); /* IE6-9 */
+
+    color: #ffffff;
+}
+
+.table_custom_dt_2 tbody td {
+    background-color: #e3e3e3;
+}
+
+.table_custom_dt_2 tr th:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.table_custom_dt_2 tr th:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.td_radius_top {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.td_radius_bottom {
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.table_custom_dt_1 {
+    margin-bottom: 0px;
+}
+
+.table_custom_dt_1, .table_custom_cd_1 {
+    padding-left: 2%;
+    padding-right: 2%;
+    border-spacing: 0 0px;
+    border-collapse: separate;
+}
+
+.table_custom_dt_1 tbody td {
+    background-color: #f5f5f5;
+    width: 50%;
+}
+
+.table_custom_dt_1 .td_left {
+    text-align: right;
+}
+/*депозит детаил------------------------------------------------------------------------------------------------ конец*/
+/*форма открытия депозита--------------------------------------------------------------------------------------- конец*/
+.table_custom_cd_1 tbody td {
+    background-color: #e3e3e3;
+}
+.table_custom_cd_1 .td_left{
+    width: 40%;
+    text-align: right;
+}
+.table_custom_cd_1 .td_right{
+    width: 60%;
+}
+
+#sum_text {
+    margin-top: 10px;
+}
+/*форма открытия депозита--------------------------------------------------------------------------------------- конец*/

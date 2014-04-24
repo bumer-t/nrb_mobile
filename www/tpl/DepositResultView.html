@@ -1,0 +1,49 @@
+<div class="ui-body ui-body-a ui-corner-all">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 text-center">
+            <img class="img_size" src="static/images/main.png"/>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            Ваш вклад <span class="bold">"[[=it.deposit.dep_name]]"</span> на сумму <span class="bold">[[=it.sum_current]] [[=it.currency_by_deposit.curr_short_name]].</span> сроком на
+            <span class="bold">[[=it.term_by_deposit.period]].</span> под <span class="bold">[[=it.term_by_deposit.base_rate]]%</span> годовых успешно открыт!
+        </div>
+    </div>
+</div>
+<div class="ui-body ui-body-a ui-corner-all background_grey">
+    <div class="row">
+        <div class="col-sm-6 text-right">
+            Возможность пополнения
+        </div>
+        <div class="col-sm-6 text-left">
+            <span class="t_grey_bold">[[=it.deposit.chance_recharge]]</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-right">
+            Возможность снятия части вклада
+        </div>
+        <div class="col-sm-6 text-left">
+            <span class="t_grey_bold">[[=it.deposit.partial_withdrawsl]]</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-right">
+            Выплата процентов
+        </div>
+        <div class="col-sm-6 text-left">
+            <span class="t_grey_bold">[[=it.deposit.percent_payment]]</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-right">
+            Минимальная сумма вклада
+        </div>
+        <div class="col-sm-6 text-left">
+            <span class="t_grey_bold">[[=it.term_by_deposit.minSum]] [[=it.currency_by_deposit.curr_short_name]]</span>
+        </div>
+    </div>
+</div>

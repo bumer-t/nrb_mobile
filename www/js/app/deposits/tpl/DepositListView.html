@@ -1,0 +1,32 @@
+<ul data-role="listview" data-inset="false">
+    [[~it.deposits :deposit:di]]
+    <li>
+        <a href="[[=app.utils.url('deposit/open', deposit.deposit.dep_code)]]" class="deposit">
+        <!--<a href="asdasd" class="deposit">-->
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <div class="col-sm-12 not_visible">1</div>
+                    <div class="col-sm-12 not_visible">2</div>
+                    <div class="col-sm-12">
+                        <p><span class="dep_name bold_green17">[[=deposit.deposit.dep_name]]</span></p>
+                    </div>
+                    <div class="col-sm-12 not_visible">4</div>
+                    <div class="col-sm-12 not_visible">5</div>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10 text-left">
+                        [[~deposit.list_deposit_small_detail :deposit_detail_small:ti]]
+                        <p>
+                            <span class="t_grey_17">[[=deposit_detail_small.deposit_max_rate]]%</span>
+                            <span class="text_default">[[=deposit_detail_small.curr_name]]</span>
+                        </p>
+                        [[~]]
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            </div>
+        </a>
+    </li>
+    [[~]]
+</ul>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Мои вклады</title>
+</head>
+<body>
+<div data-role="page" data-theme="a" class="header_title" id="my_deposits_page">
+    <div data-role="header" class="header2"></div>
+    <!-- /header -->
+    <div role="main" class="ui-content main">
+        <div data-role="content">
+
+            <div id="my_deposits_container"></div>
+
+            <script id="show-my-deposit-tpl" type="text/x-dot-template">
+                [[~it.deposit_list :deposit:di]]
+                    <ul data-role="listview" data-inset="false">
+                    <li>
+                        <a href="#[[=deposit.account]]">
+                            <div class="row">
+                                <div class="col-sm-6 text-left">
+                                    <div class="col-sm-12"><span class="t_black_21">[[=deposit.name]]</span></div>
+                                    <div class="col-sm-12"><span class="t_grey_15">до [[=deposit.date_end]]</span></div>
+                                </div>
+                                <div class="col-sm-6 text-right">
+                                    <div class="col-sm-12"><span class="text_bold_green">[[=deposit.current_sum]]</span></div>
+                                    <div class="col-sm-12"><span class="text_default">[[=deposit.cur_words]]</span></div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    </ul>
+                [[~]]
+            </script>
+
+            <script id="show-my-deposit-detail-tpl" type="text/x-dot-template">
+                [[~it.deposit_list :deposit:di]]
+                    <div data-role="page" id="[[=deposit.account]]" data-theme="a" class="ui-bar ui-bar-a and ui-corner-all">
+                        <div id="detail_main" class="ui-body ui-body-a and ui-corner-all" style="text-align: center">
+                            <div><span class="text_bold_green text-center">[[=deposit.current_sum]] [[=deposit.cur_words]]</span></div>
+                            <div><span class="t_grey_17 text-center">[[=deposit.rate]]% годовых</span></div>
+                        </div>
+                        <br/>
+                        <div data-role="navbar" class="ui-navbar" role="navigation">
+                            <ul class="ui-grid-b">
+                                <li class="ui-block-a"><a href="#extract" id="extract" class="ui-btn-active ui-state-persist ui-link ui-btn" data-role="button">Выписка</a></li>
+                                <li class="ui-block-b"><a href="#" id="about_deposit" class="ui-link ui-btn" data-role="button">О вкладе</a></li>
+                                <li class="ui-block-c"><a href="#" id="replenishment" class="ui-link ui-btn" data-role="button">Пополнить</a></li>
+                            </ul>
+                        </div>
+                        <br/>
+                        <div id="detail_box" class="ui-body ui-body-a and ui-corner-all">123213</div>
+                    </div>
+                [[~]]
+            </script>
+
+            <script id="show-my-deposit-extract-tpl" type="text/x-dot-template">
+                [[~it.deposit_list :deposit:di]]
+                    <div data-role="page" id="extract" data-theme="a" class="ui-bar ui-bar-a and ui-corner-all">
+                        123213
+                    </div>
+                [[~]]
+            </script>
+        </div>
+    </div>
+    <script>
+        $(document).delegate('.ui-page', 'pagebeforeshow', function () {
+            mydeposits_pagebeforeshow();
+        });
+
+        $(document).delegate('.ui-page', 'pageshow', function () {
+            mydeposits_pageshow();
+        });
+    </script>
+</div>
+</body>
+</html>

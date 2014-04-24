@@ -1,0 +1,11 @@
+<div class="row no-gutter" style="margin-bottom:10px !important">
+    <div class="col-sm-3 text-left"><button class="back-button btn btn-default">back</button></div>
+    <div class="col-sm-6 text-center "><span class="title1">[[=it.header_name]]</span></div>
+    <div class="col-sm-3 text-right"><a href="[[=app.utils.url('settings')]]" class="btn  btn-default">settings</a></div>
+</div>
+[[? it.activate_tab !== 0 ]]
+<ul id="tabs" class="nav nav-tabs nav-tabs_custom2" data-tabs="tabs">
+    <li class="text-center [[? it.activate_tab == 1]] active [[?]]"><a href="[[=app.utils.url('')]]">% ставки</a></li>
+    <li class="text-center [[? it.activate_tab == 2]] active [[?]]"><a href="[[=app.utils.url('mydeposits')]]">Мои депозиты</a></li>
+</ul>
+[[?]]

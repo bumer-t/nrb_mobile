@@ -1,0 +1,18 @@
+<nav class="bar bar-standard bar-tab background_header">
+    <span class="icon icon-left pull-left back-button"></span>
+    <a href="[[=app.utils.url('settings')]]" class="pull-right">
+        <span class="icon icon-gear"></span>
+    </a>
+    <h1 class="title header_text">[[=it.header_name]]</h1>
+</nav>
+
+[[? it.activate_tab !== 0 ]]
+<div class="bar bar-standard bar-header-secondary bar-tab">
+    <a class="tab-item [[? it.activate_tab == 1]] active [[?]]" [[? it.activate_tab != 1]] href="[[=app.utils.url('')]]" [[?]]>
+        % Ставки
+    </a>
+    <a class="tab-item [[? it.activate_tab == 2]] active [[?]]" [[? it.activate_tab != 2]] href="[[=app.utils.url('mydeposits')]]" [[?]]>
+        Мои депозиты
+    </a>
+</div>
+[[?]]
