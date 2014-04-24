@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-sm-5 text-right">
+        Срок вклада
+    </div>
+    <div class="col-sm-7 text-left">
+        <span class="t_black_15">[[=it.period]]<!--3 месяца --></span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-5 text-right">
+        % ставка
+    </div>
+    <div class="col-sm-7 text-left">
+        <span class="t_black_15">[[=it.base_rate]]%<!--16 %--></span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-5 text-right">
+        Сумма вклада
+    </div>
+    <div class="col-sm-7 text-left">
+        <input type="tel" name="sum_dep" id="sum_dep" value="грн" maxlength="26">
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-5 text-right">
+        С какой карты перевести деньги на вклад?
+    </div>
+    <div class="col-sm-7 text-left">
+        <select name="select-choice-1" id="select-choice-1">
+            <option value="standard1">Карта для выплат 1</option>
+            <option value="standard2">Карта для выплат 2</option>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 text-left">
+        <input class="btn btn-success" value="Оформить" type="submit" id="deposit_create" />
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 text-left">
+        <input class="btn btn-success" value="Задать вопрос" type="submit" />
+    </div>
+    <div class="col-sm-3"></div>
+</div>
